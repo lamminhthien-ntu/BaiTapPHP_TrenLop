@@ -20,4 +20,22 @@
  3 Là số nguyên tố 
  52 Không Là số nguyên tố 
  80 Không Là số nguyên tố 
+ -64 Không Là số nguyên tố 
+ 32 Không Là số nguyên tố 
+ 36 Không Là số nguyên tố 
+ 41 Là số nguyên tố 
+ -30 Không Là số nguyên tố 
+ 35 Không Là số nguyên tố 
+ 58 Không Là số nguyên tố 
+ -13 Không Là số nguyên tố 
+ -20 Không Là số nguyên tố 
+ 96 Không Là số nguyên tố 
+ 5 Là số nguyên tố 
+ 91 Không Là số nguyên tố 
+ -53 Không Là số nguyên tố 
+ -43 Không Là số nguyên tố 
+ -34 Không Là số nguyên tố 
+ 98 Không Là số nguyên tố 
+ 99 Không Là số nguyên tố 
+ -45 Không Là số nguyên tố 
  

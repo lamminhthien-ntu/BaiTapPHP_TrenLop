@@ -41,15 +41,24 @@ fclose($f);
 
 
 echo "<br> Test chức năng đọc file <br>";
+
+//Cái này đọc file chung 1 dòng, in lộn xộn lắm
 $f = fopen('soNT.txt', 'r+');
 $test=fread($f, filesize("soNT.txt"));
 echo($test);
 
-// $array = file('soNT.txt');
-// foreach($array as $key => $line) {
-//     $array[$key] = explode(" ", $line);
+// $myArray = array();
+// $file = fopen("soNT.txt", "r");
+// while (!feof($file)) {
+//    $line = fgets($file);
+//    $myArray[] = explode(' ', $line);
 // }
+// while ($myArray as $result) {
+//     echo $result; 
+//     echo "<br>";
+// } 
 
+// fclose($file);
 
 
 
