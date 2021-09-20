@@ -46,4 +46,25 @@
 
   	echo demChuSo($a).' chữ số';
 
+  	echo "<br> c) Cho biết chữ số lớn nhất trong số nguyên này <br>";
+
+  function tachChuSo($a) {
+  	// Mảng để lưu các chữ số
+		$chu_So_Array = array();
+		while ($a>0) {
+	
+		array_push($chu_So_Array, $a);
+			$a = $a / 10;
+			// echo $a.'  --  ';
+
+		}
+		return $chu_So_Array;
+	
+	}
+
+
+	var_dump(tachChuSo($a));
+
+
+
 ?>
