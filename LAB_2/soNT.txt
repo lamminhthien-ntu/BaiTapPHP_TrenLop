@@ -11,4 +11,13 @@
  29 Là số nguyên tố 
  72 Không Là số nguyên tố 
  -27 Không Là số nguyên tố 
+ 42 Không Là số nguyên tố 
+ -97 Không Là số nguyên tố 
+ 8 Không Là số nguyên tố 
+ -95 Không Là số nguyên tố 
+ -11 Không Là số nguyên tố 
+ -22 Không Là số nguyên tố 
+ 3 Là số nguyên tố 
+ 52 Không Là số nguyên tố 
+ 80 Không Là số nguyên tố 
  

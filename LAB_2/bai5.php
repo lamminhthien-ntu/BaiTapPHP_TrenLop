@@ -36,8 +36,22 @@ else
 // file_put_contents('soNT.txt', $text);
 
 fwrite($f, $text);
-
 fclose($f);
+
+
+
+echo "<br> Test chức năng đọc file <br>";
+$f = fopen('soNT.txt', 'r+');
+$test=fread($f, filesize("soNT.txt"));
+echo($test);
+
+// $array = file('soNT.txt');
+// foreach($array as $key => $line) {
+//     $array[$key] = explode(" ", $line);
+// }
+
+
+
 
 
 
