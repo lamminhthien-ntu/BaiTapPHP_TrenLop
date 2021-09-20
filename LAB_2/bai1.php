@@ -21,7 +21,7 @@
 		return true;
 	}
 
-	echo "Hiển thị các số nguyên tố nhỏ hơn ".$a."<br>";
+	echo "a) Hiển thị các số nguyên tố nhỏ hơn ".$a."<br>";
 
 	for ($i=0; $i < $a; $i++) { 
 		if (ktNguyenTo($i)) 
@@ -29,5 +29,21 @@
 			echo $i.'  ';
 		}
 	}
+
+
+	//Cho biết số nguyên này có bao nhiêu chữ số.
+	echo "<br> b) Cho biết số nguyên này có bao nhiêu chữ số. <br>";
+
+	function demChuSo($a) {
+		$dem=1;
+		while ($a>10) {
+			$a = $a / 10;
+			// echo $a.'  --  ';
+			$dem++;
+		}
+		return $dem;
+	}
+
+  	echo demChuSo($a).' chữ số';
 
 ?>
