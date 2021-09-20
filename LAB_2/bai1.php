@@ -63,7 +63,9 @@
 	}
 
 
-	var_dump(tachChuSo($a));
+	// var_dump(tachChuSo($a));
+
+	echo "Chữ số lớn nhất là ".max(tachChuSo($a));
 
 
 
