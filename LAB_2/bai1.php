@@ -51,9 +51,9 @@
   function tachChuSo($a) {
   	// Mảng để lưu các chữ số
 		$chu_So_Array = array();
-		while ($a>0) {
+		while ($a%10 != 0) {
 	
-		array_push($chu_So_Array, $a);
+		array_push($chu_So_Array, $a%10);
 			$a = $a / 10;
 			// echo $a.'  --  ';
 
