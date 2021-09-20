@@ -1,1 +1,14 @@
-21 Không là số nguyên tố�
+-55 Không Là số nguyên tố 
+ 43 Là số nguyên tố 
+ 81 Không Là số nguyên tố 
+ 52 Không Là số nguyên tố 
+ -66 Không Là số nguyên tố 
+ -79 Không Là số nguyên tố 
+ -69 Không Là số nguyên tố 
+ 27 Không Là số nguyên tố 
+ 34 Không Là số nguyên tố 
+ -86 Không Là số nguyên tố 
+ 29 Là số nguyên tố 
+ 72 Không Là số nguyên tố 
+ -27 Không Là số nguyên tố 
+ 

@@ -18,16 +18,17 @@ function ktNguyenTo($a) {
 
 $a=rand(-100,100);
 $text;
-$f = fopen('soNT.txt', 'rw+');
+//Mở file ở chế độ chỉ ghi, con trỏ được đưa xuống cuối file
+$f = fopen('soNT.txt', 'a');
 
 if (ktNguyenTo($a)) {
-	echo $a.' Là số nguyên tố';
-	$text=$a.' Là số nguyên tố';
+	echo "$a Là số nguyên tố \n ";
+	$text= "$a Là số nguyên tố \n ";
 }
 else
 {
-	echo $a.' Không là số nguyên tố';
-	$text=$a.' Không là số nguyên tố';
+	echo "$a Không số nguyên tố \n ";
+	$text= "$a Không Là số nguyên tố \n ";
 }
 
 //Cách này ghi file mà không cần mở đọc, ghi file
