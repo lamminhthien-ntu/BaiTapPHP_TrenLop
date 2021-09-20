@@ -18,6 +18,7 @@ function ktNguyenTo($a) {
 
 $a=rand(-100,100);
 $text;
+$f = fopen('soNT.txt', 'rw+');
 
 if (ktNguyenTo($a)) {
 	echo $a.' Là số nguyên tố';
@@ -29,7 +30,13 @@ else
 	$text=$a.' Không là số nguyên tố';
 }
 
-file_put_contents('soNT.txt', $text);
+//Cách này ghi file mà không cần mở đọc, ghi file
+//Vì nó tự tạo file và điền nội dung vào
+// file_put_contents('soNT.txt', $text);
+
+fwrite($f, $text);
+
+fclose($f);
 
 
 
