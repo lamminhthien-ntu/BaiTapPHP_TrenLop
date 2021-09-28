@@ -58,9 +58,9 @@ if (is_numeric($so1) && is_numeric($so2)) {
     <label id="pheptinh">Chia </label>
     <input type="radio" name="pheptinh" value="/" label="Chia"> <br><br>
     <label>Số thứ nhất: </label>
-    <input type="text" name="so1"><br><br>
+    <input type="text" name="so1" value="<?php echo $so1; ?>"><br><br>
     <label>Số thứ hai: </label>
-    <input type="text" name="so2"><br><br>
+    <input type="text" name="so2" value="<?php echo $so2; ?>"><br><br>
     <input type="submit" value="Tính"><br><br>
     <?php
     if (isset($ketqua)) {
