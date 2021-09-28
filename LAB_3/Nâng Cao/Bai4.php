@@ -18,13 +18,13 @@
       <option value="Trung Quốc">Trung Quốc</option>
       <option value="Mỹ">Mỹ</option>
     </select>
-    <label name="monhoc">Các môn đã học</label>
-    <input type="checkbox" name="php"> PHP</input>
-    <input type="checkbox" name="mysql"> MySQL</input>
-    <input type="checkbox" name="c#"> C#</input>
-    <input type="checkbox" name="xml"> XML</input>
-    <input type="checkbox" name="python"> Python</input><br><br>
-    <textarea name="ghichu" rows="5" cols="9"></textarea><br><br>
+    <label>Các môn đã học</label>
+    <input type="checkbox" value="php"  name="monhoc[]"> PHP</input>
+    <input type="checkbox" value="mysql" name="monhoc[]"> MySQL</input>
+    <input type="checkbox" value="c#" name="monhoc[]"> C#</input>
+    <input type="checkbox" value="xml" name="monhoc[]"> XML</input>
+    <input type="checkbox" value="python" name="monhoc[]"> Python</input><br><br>
+    <textarea name="ghichu" rows="5" cols="20"></textarea><br><br>
     <input type="submit" value="Gửi">
     <input type="reset" name="Hủy">
     

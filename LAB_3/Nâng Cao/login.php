@@ -1,5 +1,6 @@
 
 <?php
+var_dump($_GET['monhoc']);
 isset($_GET['hoten']) ? $hoten = $_GET['hoten'] : $hoten = 'Chưa nhập họ tên';
 isset($_GET['diachi'])? $diachi = $_GET['diachi'] : $diachi = 'Chưa nhập địa chỉ';
 isset($_GET['sdt'])? $sdt = $_GET['sdt'] : $sdt = 'Chưa nhập số điện thoại';
@@ -18,7 +19,9 @@ isset($_GET['ghichu']) ? $ghichu = $_GET['ghichu'] : $ghichu = 'Chưa nhập ghi
 <p>Địa chỉ: <?php echo $diachi;?> </p>
 <p>Điện thoại: <?php echo $sdt;?> </p>
 <p>Quốc tịch <?php echo $quoctich;?> </p>
-<p>Môn học: <?php echo $monhoc;?> </p>
+<p>Môn học: <?php
+foreach ($monhoc as $mh) echo $mh." ,";
+?> </p>
 <p>Ghi chú: <?php echo $ghichu;?> </p>
 <a href="javascript:window.history.back(-1);">Trở về trang trước</a>
 
