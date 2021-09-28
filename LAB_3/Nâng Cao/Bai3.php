@@ -7,44 +7,66 @@ isset($_GET['pheptinh']) ? $pheptinh = $_GET['pheptinh'] : $pheptinh = "";
 if (is_numeric($so1) && is_numeric($so2)) {
     switch ($pheptinh) {
         case "+":
+            $pheptinh = "Cộng";
             $ketqua =  $so1 + $so2;
             break;
         case "-":
+            $pheptinh = "Trừ";
             $ketqua =  $so1 - $so2;
             break;
         case "*":
+            $pheptinh = "Nhân";
             $ketqua =  $so1 * $so2;
             break;
         case "/":
+            $pheptinh = "Chia";
             $ketqua =  $so1 / $so2;
             break;
         default:
+            $pheptinh ="";
             $ketqua =  "Toán hạng không hợp lệ";
     }
 }
-
 ?>
-<h2>Phép tính trên hai số </p>
-    <form action="Bai3.php" method="get" enctype="multipart/form">
-        <label>Chọn phép tính: </label>
-        <label>Cộng </label>
-        <input type="radio" name="pheptinh" value="+" label="Cộng">
-        <label>Trừ </label>
-        <input type="radio" name="pheptinh" value="-" label="Trừ">
-        <label>Nhân </label>
-        <input type="radio" name="pheptinh" value="*" label="Nhân">
-        <label>Chia </label>
-        <input type="radio" name="pheptinh" value="/" label="Chia"> <br><br>
-        <label>Số thứ nhất: </label>
-        <input type="text" name="so1"><br><br>
-        <label>Số thứ hai: </label>
-        <input type="text" name="so2"><br><br>
-        <input type="submit" value="Tính"><br><br>
-        <?php
-        if (isset($ketqua)) {
-            echo "<input type='text' value='$ketqua' disabled>";
-        }
-        else
-        echo "<input type='text' value='Dữ liệu  chưa phù hợp' disabled>";
-        ?>
-    </form>
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    label {
+        font-size: 20;
+        font-weight: bold;
+        color: blue;
+    }
+
+    #pheptinh {
+        font-size: 20;
+        font-weight: bold;
+        color: yellowgreen;
+    }
+</style>
+<h2>PHÉP TÍNH TRÊN HAI SỐ </h2>
+<form action="Bai3.php" method="get" enctype="multipart/form">
+    <label>Chọn phép tính: </label>
+    <label id="pheptinh">Cộng </label>
+    <input type="radio" name="pheptinh" value="+" label="Cộng">
+    <label  id="pheptinh">Trừ </label>
+    <input type="radio" name="pheptinh" value="-" label="Trừ">
+    <label id="pheptinh">Nhân </label>
+    <input type="radio" name="pheptinh" value="*" label="Nhân">
+    <label id="pheptinh">Chia </label>
+    <input type="radio" name="pheptinh" value="/" label="Chia"> <br><br>
+    <label>Số thứ nhất: </label>
+    <input type="text" name="so1"><br><br>
+    <label>Số thứ hai: </label>
+    <input type="text" name="so2"><br><br>
+    <input type="submit" value="Tính"><br><br>
+    <?php
+    if (isset($ketqua)) {
+        echo "Kết quả phép $pheptinh  : <input type='text' value='$ketqua' disabled>";
+    } else
+        echo "Dữ liệu  chưa phù hợp";
+    ?>
+</form>
+<a href="javascript:window.history.back(-1);">Trở về trang trước</a>
