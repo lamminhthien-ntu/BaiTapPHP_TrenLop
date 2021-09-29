@@ -1,8 +1,8 @@
 <?php
-isset($_GET["ten"]) ? $ten = $_GET["ten"] : $ten = "";
-isset($_GET["new_num"]) ? $new_num = $_GET["new_num"] : $new_num = "";
-isset($_GET['old_num']) ? $old_num = $_GET['old_num'] : $old_num = "";
-isset($_GET['dongia']) ? $dongia = $_GET['dongia'] : $dongia = "20000";
+isset($_POST["ten"]) ? $ten = $_POST["ten"] : $ten = "";
+isset($_POST["new_num"]) ? $new_num = $_POST["new_num"] : $new_num = "";
+isset($_POST['old_num']) ? $old_num = $_POST['old_num'] : $old_num = "";
+isset($_POST['dongia']) ? $dongia = $_POST['dongia'] : $dongia = "20000";
 
 
 if (is_numeric($old_num) && is_numeric($new_num) && is_numeric($dongia)) {
