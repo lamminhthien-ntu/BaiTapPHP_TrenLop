@@ -68,7 +68,10 @@ input {
 	<tr>
 		<td>Số tiền thanh toán: </td>
 		<td>
-			<input type="text" name="ketqua" disabled="" value="<?php echo $ketqua; ?>"> (VNĐ)
+			<input type="text" name="ketqua" disabled="" value="<?php 
+				if ($ketqua > 0) echo $ketqua;
+				else echo "Chỉ số mới phải lớn hơn chỉ số cũ";
+			 ?>"> (VNĐ)
 		</td>
 	</tr>
 	<tr>
