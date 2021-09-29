@@ -1,3 +1,29 @@
+
+<style>
+h2 {
+  text-align: center;
+  color: red;
+  font-style: italic;
+  font-weight: bolder;
+  margin-top: auto;
+  margin-bottom: auto;
+} 
+td {
+  color: red;
+  font-weight: bolder;
+}
+table,tr,td,input {
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: beige;
+}
+input {
+  background-color: yellowgreen;
+}
+
+
+</style>
 <form method="get" action="login.php">
   <fieldset>
     <legend>Thông tin đăng nhập</legend>

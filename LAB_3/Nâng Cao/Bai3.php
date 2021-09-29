@@ -64,9 +64,9 @@ if (is_numeric($so1) && is_numeric($so2)) {
     <input type="submit" value="Tính"><br><br>
     <?php
     if (isset($ketqua)) {
-        echo "Kết quả phép $pheptinh  : <input type='text' value='$ketqua' disabled>";
+        echo "<label> Kết quả phép $pheptinh </label> : <input type='text' value='$ketqua' disabled>";
     } else
-        echo "Dữ liệu  chưa phù hợp";
+        echo "<label>Dữ liệu  chưa phù hợp</lable>";
     ?>
 </form>
 <a href="javascript:window.history.back(-1);">Trở về trang trước</a>

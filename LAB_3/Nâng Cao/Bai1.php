@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>tinh dien tich hình tròn</title>
+  <title>Tính diện tích hình tròn</title>
   <style type="text/css">
   body {  
     background-color: beige;
