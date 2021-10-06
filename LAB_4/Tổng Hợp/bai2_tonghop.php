@@ -16,9 +16,14 @@ if (isset($_POST['mang_tho'])) {
 echo  $sum;
 
 ?>
-<form method="post" action="bai2_tonghop.php">
+
+<head>
+    <link rel="stylesheet" href="../../Thien_Lib/thien_style.css">
+</head>
+
+<form method="post" action="bai2_tonghop.php" class="background-blue margin-center border-rounded border-blue">
     <h1>Nhập và tính trên dãy số</h1>
-    Nhập dãy số: <input type="text" name="mang_tho"><br>
-    <input type="submit" value="Tổng dãy số"><br>
-    Tổng dãy số: <input type="text" disabled value="<?php echo $sum; ?>">
+    Nhập dãy số: <input type="text" name="mang_tho" class="border-blue text-style text-red"><br>
+    <input type="submit" value="Tổng dãy số" class="border-violet text-style text-red" ><br>
+    Tổng dãy số: <input type="text" class="border-blue text-red" disabled value="<?php echo $sum; ?>">
 </form>
