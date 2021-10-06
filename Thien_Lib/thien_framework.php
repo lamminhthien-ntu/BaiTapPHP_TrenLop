@@ -34,5 +34,14 @@ function TachMang($array,$seperator)
 }
 
 
+//Hàm để xuất ra mảng (em sợ quên hàm implode)
+//Tham số là Array và Seperator (Dấu phân cách)
+//Đặc biệt dấu phân cách có thể là <br> để in mảng xuống dòng. Thật tuyệt vời
+function XuatMang($array,$seperator)
+{
+     return implode($seperator,$array)."&#13;&#10;";
+}
+
+
 
 ?>
