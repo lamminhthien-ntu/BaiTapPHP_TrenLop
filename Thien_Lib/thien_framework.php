@@ -42,6 +42,35 @@ function XuatMang($array,$seperator)
      return implode($seperator,$array)."&#13;&#10;";
 }
 
+//Hàm xuất mảng cho bài tập xổ số
+function XuatMangXoSo($array,$seperator,$limit_num)
+{
+    for ($i=0;$i<count($array);$i++)
+        $array[$i] = ChenSo0($array[$i],$limit_num);
+
+    return implode($seperator,$array)."&#13;&#10;";
+}
+
+
+//Hàm tạo mảng các số ngẫu nhiên duy nhất trong mảng
+function UniqueRandomNumbersWithinRange($min, $max, $quantity) {
+    $numbers = range($min, $max);
+    shuffle($numbers);
+    return array_slice($numbers, 0, $quantity);
+}
+
+
+//Hàm chèn số  0 vào trước mảng
+function ChenSo0($num,$limit_num)
+{
+    while ($num<$limit_num)
+    {
+        $num = "0".$num;
+        return ChenSo0($num,$limit_num/10);
+    }
+    return $num;
+}
+
 
 
 ?>

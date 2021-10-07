@@ -90,15 +90,17 @@ if (KT_XuLiSo($n) && KT_XuLiSo($chen_so) && KT_XuLiSo($vitri))
 </head>
 
 
-<form method="get" action="bai1_tonghop.php" class="border-rounded margin-center background-green">
-    Nhập n:<input type="text" class="border-violet text-red" name="n"><br>
-    Nhập số cần chèn:<input type="text" class="border-violet text-red" name="chen_so"><br>
-    Nhập vị trí cần chèn:<input type="text" class="border-violet text-red" name="vitri"><br>
-    Thực hiện: <input type="submit"><br>
-    In ra mảng: <input disabled type="text"  class="border-violet text-red" value="<?php echo $mang_in_ra; ?>"><br>
-    Mảng sắp xếp tăng dần: <input disabled type="text" class="border-violet text-red" value="<?php echo $mang_in_ra_tang_dan; ?>"><br>
-    Mảng sau khi chèn: <input disabled type="text" class="border-violet text-red" value="<?php echo $mang_in_ra_chen_so; ?>"><br>
-    Mảng sau khi sắp xếp tăng dần phía bên trái tính từ số được chèn và tăng dần bên phải số được chèn
+<div class="anime-bg">
+    <form method="get" action="bai1_tonghop.php" class="border-rounded margin-center background-green">
+        Nhập n:<input type="text" class="border-violet text-red" name="n"><br>
+        Nhập số cần chèn:<input type="text" class="border-violet text-red" name="chen_so"><br>
+        Nhập vị trí cần chèn:<input type="text" class="border-violet text-red" name="vitri"><br>
+        Thực hiện: <input type="submit"><br>
+        In ra mảng: <input disabled type="text"  class="border-violet text-red" value="<?php echo $mang_in_ra; ?>"><br>
+        Mảng sắp xếp tăng dần: <input disabled type="text" class="border-violet text-red" value="<?php echo $mang_in_ra_tang_dan; ?>"><br>
+        Mảng sau khi chèn: <input disabled type="text" class="border-violet text-red" value="<?php echo $mang_in_ra_chen_so; ?>"><br>
+        Mảng sau khi sắp xếp tăng dần phía bên trái tính từ số được chèn và tăng dần bên phải số được chèn
         <input disabled type="text" class="border-violet text-red" value="<?php echo $mang_in_ra_cuoi; ?>"><br>
 
-</form>
+    </form>
+</div>

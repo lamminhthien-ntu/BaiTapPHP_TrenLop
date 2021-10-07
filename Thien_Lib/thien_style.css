@@ -3,6 +3,7 @@
     font-weight: bolder;
     font-style: italic;
 }
+
 .red {
     background-color: tomato;
 }
@@ -35,7 +36,7 @@ background-color: violet;
     color: violet;
 }
 
-.border-red{
+.border-red table{
     border: 2px solid tomato;
 }
 .border-green {
@@ -48,7 +49,7 @@ background-color: violet;
 .border-violet {
     border: 2px solid violet;
 }
-.background-blue {
+.background-blue table {
     background-color: lightblue;
 }
 
@@ -56,12 +57,12 @@ background-color: violet;
     background-color: green;
     opacity: 0.6;
 }
-.border-rounded {
+.border-rounded table {
     border: 2px solid red;
     border-radius: 5px;
 }
 
-.margin-center {
+.margin-center table tr td th {
    margin-bottom: auto;
     text-align: center;
 }
@@ -70,5 +71,6 @@ background-color: violet;
     text-align: center;
     color: #4CAF50;
 }
+
 
 
