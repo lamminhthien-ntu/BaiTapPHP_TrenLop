@@ -1,0 +1,12 @@
+<input onclick="document.getElementById('custom').disabled = false; document.getElementById('charstype').disabled = true;" type="radio" name="type" checked="checked">wanna custom url?
+<!--<input type="text" name="custom" id="custom" placeholder="should be 5 charecters at least" >-->
+<select name="charstype" id="custom">
+    <option>Letters</option>
+    <option>Number</option>
+</select>
+<br><br>
+<input onclick="document.getElementById('custom').disabled = true; document.getElementById('charstype').disabled = false;" type="radio" name="type" value="customurl">random?
+<select name="charstype" id="charstype" disabled="disabled">
+    <option>Letters</option>
+    <option>Number</option>
+</select>

@@ -1,4 +1,15 @@
+<head>
+    <link href="../../Thien_Lib/thien_style.css" rel="stylesheet">
+
+</head>
 <?php
+session_start();
+// Nếu click vào nút Lưu Session
+if (isset($_GET['save-session']))
+{
+    // Lưu Session
+    $_SESSION['ktveso'] = $_GET['veso'];
+}
 
 function KT_InputGET($input)
 {
@@ -67,6 +78,7 @@ function TimNguoiTrungGiai($array,$tengiai)
                 echo "Bạn đã trúng giải $tengiai<br>";
                 break;
             }
+            else echo "Chưa trúng<br>";
     }
 }
 
@@ -81,17 +93,39 @@ $Giai1 = UniqueRandomNumbersWithinRange(1,99999,1);
 $Giai7 = UniqueRandomNumbersWithinRange(1,999,1);
 $GiaiDacBiet = UniqueRandomNumbersWithinRange(1,999999,1);
 
+$_GET['Giai4']=$Giai4;
+$_GET['Giai3']=$Giai3;
+$_GET['Giai2']=$Giai2;
+$_GET['Giai1']=$Giai1;
+$_GET['GiaiDacBiet']=$GiaiDacBiet;
+$_GET['Giai8']=$Giai8;
+$_GET['Giai7']=$Giai7;
+$_GET['Giai6']=$Giai6;
+$_GET['Giai5']=$Giai5;
 
 
 
 ?>
-<head>
-    <link href="../../Thien_Lib/thien_style.css" rel="stylesheet">
-</head>
-<form action="bai3_tonghop.php" method="get">
+
+<form  method="get" >
+    <input type="text" disabled value="
+        <?php
+    // Hiển thị thông tin lưu trong Session
+    // phải kiểm tra có tồn tại không trước khi hiển thị nó ra
+    if (isset($_SESSION['ktveso']))
+    {
+//        echo 'Tên Đăng Nhập Là: ' . $_SESSION['name'];
+        echo $_SESSION['ktveso'];
+    }
+
+
+
+        ?>
+
+">
     <label>Nhập số cần dò:</label><br>
     <input class="background-blue text-red" type="text" name="veso">
-    <input type="button" value="Kiểm tra" class="background-blue text-red">
+    <input type="submit" value="Kiểm tra"  name="save-session" class="background-blue text-red">
     <table border="9">
         <tr>
             <th>Tên giải </th>
@@ -99,7 +133,7 @@ $GiaiDacBiet = UniqueRandomNumbersWithinRange(1,999999,1);
         </tr>
         <tr>
             <td>Giải 8</td>
-            <td><?php echo XuatMangXoSo($Giai8,"--",10,"Giải 8") ?></td>
+            <td ><?php echo XuatMangXoSo($Giai8,"--",10,"Giải 8") ?></td>
         </tr>
         <tr>
             <td>Giải 7</td>
