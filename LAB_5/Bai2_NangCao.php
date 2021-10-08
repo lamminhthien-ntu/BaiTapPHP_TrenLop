@@ -3,6 +3,36 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Untitled Document</title>
+    <style>
+
+        * {
+            text-align: center;
+            color: red;
+            font-style: italic;
+            font-weight: bolder;
+            color: red;
+            font-weight: bolder;
+            border-radius: 10px;
+            background-color: beige;
+        }
+        disabled {
+            background-color: gainsboro;
+        }
+        form {
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+            background-color: lightblue;
+        }
+        * {
+            border-radius: 10px;
+            background-image: linear-gradient(lightblue, yellow);
+        }
+
+
+
+    </style>
 </head>
 
 <body>

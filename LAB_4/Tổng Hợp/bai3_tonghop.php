@@ -37,6 +37,7 @@ function XuatMangXoSo($array,$seperator,$limit_num,$tengiai)
 {
     for ($i=0;$i<count($array);$i++)
         $array[$i] = ChenSo0($array[$i],$limit_num);
+
     TimNguoiTrungGiai($array,$tengiai);
 
 
@@ -66,16 +67,57 @@ function ChenSo0($num,$limit_num)
 //Hàm tìm người trúng giải
 function TimNguoiTrungGiai($array,$tengiai)
 {
+
     $veso = KT_InputGET('veso');
-    if (KT_XuLiSo($veso))
+    if (KT_XuLiSo($veso) && strlen($veso)==6)
     {
+//        foreach ($array as $v)
+//            if ($veso == $v)
+//            {
+//                echo "Bạn đã trúng giải $tengiai<br>";
+//                break;
+//            }
+//            else echo "Chưa trúng<br>";
+        switch ($tengiai) {
+            case "Giải 8":
+                $trungNhieuGiai = $veso[4].$veso[5];
+                break;
+            case "Giải 7":
+                $trungNhieuGiai = $veso[3].$veso[4].$veso[5];
+                break;
+            case "Giải 6":
+                $trungNhieuGiai = $veso[2].$veso[3].$veso[4].$veso[5];
+                break;
+            case "Giải 5":
+                $trungNhieuGiai = $veso[2].$veso[3].$veso[4].$veso[5];
+                break;
+            case "Giải 4":
+                $trungNhieuGiai = $veso[1].$veso[2].$veso[3].$veso[4].$veso[5];
+                break;
+            case "Giải 3":
+                $trungNhieuGiai = $veso[1].$veso[2].$veso[3].$veso[4].$veso[5];
+                break;
+            case "Giải 2":
+                $trungNhieuGiai = $veso[1].$veso[2].$veso[3].$veso[4].$veso[5];
+                break;
+            case "Giải 1":
+                $trungNhieuGiai = $veso[0].$veso[1].$veso[2].$veso[3].$veso[4].$veso[5];
+                break;
+            case "Giải Đặc Biệt":
+                $trungNhieuGiai = $veso[0].$veso[1].$veso[2].$veso[3].$veso[4].$veso[5];
+                break;
+            default:
+                $trungNhieuGiai = $veso;
+        }
+
         foreach ($array as $v)
-            if ($veso == $v)
+            if ($trungNhieuGiai == $v)
             {
                 echo "Bạn đã trúng giải $tengiai<br>";
                 break;
             }
-            else echo "Chưa trúng<br>";
+//            else echo "Chưa trúng<br>";
+
     }
 }
 
@@ -104,7 +146,7 @@ if (!isset($_SESSION["Giai4"]))
 
 <form  method="get" action="bai3_tonghop.php" >
     <label>Nhập số cần dò:</label><br>
-    <input  type="text" name="veso">
+    <input  type="text" name="veso" value="<?php  if (isset($_GET['veso'])) echo $_GET['veso']; ?>">
     <input type="submit" value="Kiểm tra"  name="save-session">
     <input type="submit" value="Xóa Session (Random lại Số mới)" name="unset-session">
     <table border="9">
