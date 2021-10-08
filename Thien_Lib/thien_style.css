@@ -1,76 +1,24 @@
+
 * {
-    font-size: larger;
-    font-weight: bolder;
+    text-align: center;
+    color: red;
     font-style: italic;
+    font-weight: bolder;
+    color: red;
+    font-weight: bolder;
+    border-radius: 10px;
+    background-color: beige;
 }
-
-.red {
-    background-color: tomato;
-}
-
-.green {
-    background-color: mediumseagreen;
-}
-
-.blue {
-    background-color: dodgerblue;
-}
-
-.violet .purple {
-background-color: violet;
-}
-
-.text-red {
-    color: tomato;
-}
-
-.text-green {
-    color: mediumseagreen;
-}
-
-.text-blue {
-    color: dodgerblue;
-}
-
-.text-violet {
-    color: violet;
-}
-
-.border-red table{
-    border: 2px solid tomato;
-}
-.border-green {
-    border: 2px solid mediumseagreen;
-}
-.border-blue {
-    border: 2px solid dodgerblue;
-}
-
-.border-violet {
-    border: 2px solid violet;
-}
-.background-blue table {
+form {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
     background-color: lightblue;
 }
-
-.background-green {
-    background-color: green;
-    opacity: 0.6;
+* {
+    border-radius: 10px;
+    background-image: linear-gradient(lightblue, yellow);
 }
-.border-rounded table {
-    border: 2px solid red;
-    border-radius: 5px;
-}
-
-.margin-center table tr td th {
-   margin-bottom: auto;
-    text-align: center;
-}
-
-.text-style {
-    text-align: center;
-    color: #4CAF50;
-}
-
 
 

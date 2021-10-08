@@ -149,6 +149,7 @@ class Student extends People {
 
 
 
+
 }
 
 $hoTen = KT_InputGET('hoTen');
@@ -166,6 +167,7 @@ if ($ngheNghiep == "Giáo Viên")
     $gv->setGioiTinh($gioiTinh);
     $gv->setDiaChi($diaChi);
     $gv->setTrinhDo($temp);
+
     $str = "Lương của Giáo viên là".$gv->tinhLuongCoBan();
 }
 
@@ -179,6 +181,7 @@ if ($ngheNghiep == "Sinh Viên")
     $sv->setGioiTinh($gioiTinh);
     $sv->setDiaChi($diaChi);
     $sv->setNganhHoc($temp);
+    echo "<br> Ngành học".$sv->getNganhHoc();
     $str = "Điểm Thưởng của Sinh viên là".$sv->DiemThuong();
 }
 
@@ -187,7 +190,33 @@ if ($ngheNghiep == "Sinh Viên")
 ?>
 
 <head>
-    <link rel="stylesheet" href="../../BaiTapPHP_TrenLop/Thien_Lib/thien_style.css">
+    <style>
+
+        * {
+            text-align: center;
+            color: red;
+            font-style: italic;
+            font-weight: bolder;
+            color: red;
+            font-weight: bolder;
+            border-radius: 10px;
+            background-color: beige;
+        }
+        form {
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+            background-color: lightblue;
+        }
+        * {
+            border-radius: 10px;
+            background-image: linear-gradient(lightblue, yellow);
+        }
+
+
+
+    </style>
     <script>
         if (document.getElementById("gv").checked == true)  {
             //nếu là gv thì hiện form ngành, đóng form trih
@@ -208,7 +237,6 @@ if ($ngheNghiep == "Sinh Viên")
         <option value="Nam" selected="selected">Nam</option>
         <option value="Nữ">Nữ</option>
     </select><br>
-   <span style="padding-right: 3px">  Nghề nghiệp:  </span>
 <!--    Giáo Viên<input type="radio" name="ngheNghiep" id="gv" value="Giáo Viên">-->
 <!--    Sinh Viên<input type="radio" name="ngheNghiep" id="sv" value="Sinh Viên"><br>-->
 <!--    Nghề Nghiệp <input type="text" name="ngheNghiep">-->
@@ -223,15 +251,16 @@ if ($ngheNghiep == "Sinh Viên")
 <!---->
 <!--    Ngành Học <input type="text" name="temp" id="nganh"><br>-->
 <!--    Lương / Điểm Thưởng <input type="text" disabled value="--><?php //if (isset($str)) echo $str; ?><!--"><br>-->
-    <input onclick="document.getElementById('ngheNghiep').disabled = false; document.getElementById('charstype').disabled = true;" type="radio" name="type" checked="checked">Chọn nghề nghiệp?
+    <input onclick="document.getElementById('temp').disabled = false; document.getElementById('charstype').disabled = true;" type="radio" name="ngheNghiep" value="Sinh Viên" checked="checked">Sinh Viên: Chọn Ngành Học
     <!--<input type="text" name="ngheNghiep" id="ngheNghiep" placeholder="should be 5 charecters at least" >-->
-    <select name="charstype" id="ngheNghiep">
-        <option value="Sinh Viên">Sinh Viên</option>
-        <option value="Giáo Viên">Giáo Viên</option>
+    <select name="temp" id="temp">
+        <option value="CNTT">CNTT</option>
+        <option value="KT">KT</option>
+        <option value="Ngành Khác">Ngành Khác</option>
     </select>
     <br><br>
-    <input onclick="document.getElementById('ngheNghiep').disabled = true; document.getElementById('charstype').disabled = false;" type="radio" name="type" value="ngheNghiepurl">random?
-    <select name="charstype" id="charstype" disabled="disabled">
+    <input onclick="document.getElementById('temp').disabled = true; document.getElementById('charstype').disabled = false;" type="radio" name="ngheNghiep" value="Giáo Viên">Giáo Viên: Chọn Trình Độ
+    <select name="temp" id="charstype" disabled="disabled">
         <option value="Cử Nhân">Cử Nhân</option>
         <option value="Thạc Sĩ">Thạc Sĩ</option>
         <option value="Tiến Sĩ">Tiến Sĩ</option>

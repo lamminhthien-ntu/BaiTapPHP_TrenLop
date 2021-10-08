@@ -1,4 +1,5 @@
 <?php
+session_start()
 isset($_GET["so2"]) ? $so2 = $_GET["so2"] : $so2 = "";
 isset($_GET['so1']) ? $so1 = $_GET['so1'] : $so1 = "";
 isset($_GET['pheptinh']) ? $pheptinh = $_GET['pheptinh'] : $pheptinh = "";
