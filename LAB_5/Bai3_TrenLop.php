@@ -226,14 +226,17 @@ if ($ngheNghiep == "Sinh Viên")
     <input onclick="document.getElementById('ngheNghiep').disabled = false; document.getElementById('charstype').disabled = true;" type="radio" name="type" checked="checked">Chọn nghề nghiệp?
     <!--<input type="text" name="ngheNghiep" id="ngheNghiep" placeholder="should be 5 charecters at least" >-->
     <select name="charstype" id="ngheNghiep">
-        <option>Letters</option>
-        <option>Number</option>
+        <option value="Sinh Viên">Sinh Viên</option>
+        <option value="Giáo Viên">Giáo Viên</option>
     </select>
     <br><br>
     <input onclick="document.getElementById('ngheNghiep').disabled = true; document.getElementById('charstype').disabled = false;" type="radio" name="type" value="ngheNghiepurl">random?
     <select name="charstype" id="charstype" disabled="disabled">
-        <option>Letters</option>
-        <option>Number</option>
-    </select>
+        <option value="Cử Nhân">Cử Nhân</option>
+        <option value="Thạc Sĩ">Thạc Sĩ</option>
+        <option value="Tiến Sĩ">Tiến Sĩ</option>
+        <option value="Đại Học">Đại Học</option>
+    </select><br>
+    <?php if (isset($str)) echo $str; ?>
     <input type="submit" value="Thực thi">
 </form>
