@@ -1,13 +1,7 @@
 
-* {
-    text-align: center;
-    color: red;
-    font-style: italic;
-    font-weight: bolder;
-    color: red;
-    font-weight: bolder;
-    border-radius: 10px;
-    background-color: beige;
+
+disabled {
+    background-color: gainsboro;
 }
 form {
     margin: auto;
@@ -19,6 +13,17 @@ form {
 * {
     border-radius: 10px;
     background-image: linear-gradient(lightblue, yellow);
+}
+
+* {
+    text-align: center;
+    color: red;
+    font-style: italic;
+    font-weight: bolder;
+    color: red;
+    font-weight: bolder;
+    border-radius: 10px;
+    background-color: beige;
 }
 
 
