@@ -111,11 +111,11 @@ class PHAN_SO
 
 
     // chia 2 phân số
-    function chia($p_tuso,$p_mauso)
+    function chia($p_mauso,$p_tuso)
     {	$ps= new PHAN_SO();
         $ps->khoitao_ps($p_tuso,$p_mauso);
-        $ps->tuso=($this->tuso*$ps->mauso);
-        $ps->mauso= ($this->mauso*$ps->tuso);
+        $ps->tuso=($this->tuso*$ps->tuso);
+        $ps->mauso= ($this->mauso*$ps->mauso);
         $ps->toigian_ps();
         return $ps;
     }
@@ -199,12 +199,12 @@ if (isset($_POST['Chon_pheptinh']))
         case "nhân":
             $ps=new PHAN_SO();
             $ps=$ps_1->nhan($ps_2->tuso,$ps_2->mauso);
-            $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso()."*".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
+            $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso()."  *  ".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
             break;
         case "chia":
             $ps=new PHAN_SO();
-            $ps=$ps_1->nhan($ps_2->tuso,$ps_2->mauso);
-            $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso().":".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
+            $ps=$ps_1->chia($ps_2->tuso,$ps_2->mauso);
+            $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso()."  :  ".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
             break;
     }
     echo "Phép ".$pheptinh." là : ". $ketqua;
