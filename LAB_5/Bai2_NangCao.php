@@ -109,6 +109,17 @@ class PHAN_SO
         return $ps;
     }
 
+
+    // chia 2 phân số
+    function chia($p_tuso,$p_mauso)
+    {	$ps= new PHAN_SO();
+        $ps->khoitao_ps($p_tuso,$p_mauso);
+        $ps->tuso=($this->tuso*$ps->mauso);
+        $ps->mauso= ($this->mauso*$ps->tuso);
+        $ps->toigian_ps();
+        return $ps;
+    }
+
 }
 
 ?>
@@ -189,6 +200,11 @@ if (isset($_POST['Chon_pheptinh']))
             $ps=new PHAN_SO();
             $ps=$ps_1->nhan($ps_2->tuso,$ps_2->mauso);
             $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso()."*".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
+            break;
+        case "chia":
+            $ps=new PHAN_SO();
+            $ps=$ps_1->nhan($ps_2->tuso,$ps_2->mauso);
+            $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso().":".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
             break;
     }
     echo "Phép ".$pheptinh." là : ". $ketqua;
