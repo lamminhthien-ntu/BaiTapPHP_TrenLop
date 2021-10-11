@@ -1,9 +1,21 @@
 <?php
 $mang_can = array("Qúy","Giáp",'Ất','Binh','Đinh','Mậu','Kỷ','Canh','Tân','Nhâm');
 $mang_chi = array('Hợi','Tý','Sửu','Dần','Mão','Thìn','Tỵ','Ngọ','Mùi','Thân','Dậu','Tuất');
-$mang_hinh = array('hoi.jpg','ty.jpg','suu.jpg','dan.jpg','mao.jpg','thin.gif','rain.jpg','ngo.jpg','mui.jpg','than.gif','dau.jpg','tuat.jpg');
+$mang_hinh = array('hoi.jpg','ty.jpg','suu.png','dan.jpg','mao.jpg','thin.jpg','ty.jpg','ngo.jpg','mui.jpg','than.jpg','dau.jpeg','tuat.jpg');
 
+//KT và lấy giá trị âm lịch
+isset($_POST["duongLich"]) ? $nam = $_POST["duongLich"] : $nam = "";
 
+if (is_numeric($nam))
+{
+    $nam = $nam-3;
+    $can = $nam%10;
+    $chi = $nam%12;
+    $nam_al = $mang_can[$can];
+    $nam_al = $nam_al."".$mang_chi[$chi];
+    $hinh = $mang_hinh[$chi];
+    $hinh_anh = "<img src='12con_giap/$hinh'>";
+}
 
 
 ?>
@@ -27,10 +39,12 @@ $mang_hinh = array('hoi.jpg','ty.jpg','suu.jpg','dan.jpg','mao.jpg','thin.gif','
         </tr>
 
         <tr>
-            <td><input type="text" name="duongLich" value=""></td>
-            <td><input type="button" value="=>"></td>
-            <td><input type="text" name="amLich" value="" disabled></td>
+            <td><input type="text" name="duongLich" value="<?php if(isset($_POST['duongLich'])) echo $_POST['duongLich']; else echo '';?>"></td>
+            <td><input type="submit" value="=>"></td>
+            <td><input type="text" name="amLich" value="<?php if (isset($nam_al))  echo $nam_al; else echo '';?>" disabled></td>
         </tr>
     </table>
-    <img src="" class="center">
+   <div class="center">
+       <?php echo $hinh_anh; ?>
+   </div>
 </form>
