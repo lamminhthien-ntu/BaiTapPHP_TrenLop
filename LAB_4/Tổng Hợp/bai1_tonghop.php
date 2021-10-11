@@ -86,7 +86,7 @@ if (KT_XuLiSo($n) && KT_XuLiSo($chen_so) && KT_XuLiSo($vitri))
 
 ?>
 <head>
-  <link rel="stylesheet" href="../../Thien_Lib/thien_style.css">
+  <link rel="stylesheet" href="../../Thien_Lib/thien_style_table.css">
 </head>
 
 

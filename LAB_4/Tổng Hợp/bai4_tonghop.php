@@ -64,7 +64,7 @@ function ThayTheKhac0To1($array,$m,$n)
 ?>
 
 <head>
-    <link rel="stylesheet" href="../../Thien_Lib/thien_style.css">
+    <link rel="stylesheet" href="../../Thien_Lib/thien_style_table.css">
     //Ghi đè CSS
     <style>
         td {

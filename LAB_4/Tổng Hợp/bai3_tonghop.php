@@ -1,5 +1,5 @@
 <head>
-    <link href="../../Thien_Lib/thien_style.css" rel="stylesheet">
+    <link href="../../Thien_Lib/thien_style_table.css" rel="stylesheet">
 
 </head>
 <?php

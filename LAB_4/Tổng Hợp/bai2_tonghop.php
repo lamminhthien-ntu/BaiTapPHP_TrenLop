@@ -18,7 +18,7 @@ echo  $sum;
 ?>
 
 <head>
-    <link rel="stylesheet" href="../../Thien_Lib/thien_style.css">
+    <link rel="stylesheet" href="../../Thien_Lib/thien_style_table.css">
 </head>
 
 <form method="post" action="bai2_tonghop.php" class="background-blue margin-center border-rounded border-blue">

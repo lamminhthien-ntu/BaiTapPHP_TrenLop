@@ -77,8 +77,9 @@ class PHAN_SO
     {	$uscln=$this->USCLN($this->tuso, $this->mauso);
         $this->tuso=$this->tuso/$uscln;
         $this->mauso=$this->mauso/$uscln;
-
     }
+
+
     //tinh tong hai phan so
     function tong($p_tuso,$p_mauso)
     {	$ps= new PHAN_SO();
@@ -94,7 +95,7 @@ class PHAN_SO
         $ps->khoitao_ps($p_tuso,$p_mauso);
         $ps->tuso=($this->tuso*$ps->mauso)- ($ps->tuso*$this->mauso);
         $ps->mauso= $this->mauso*$ps->mauso;
-        //$ps->toigian_ps();
+        $ps->toigian_ps();
         return $ps;
     }
 
@@ -102,15 +103,17 @@ class PHAN_SO
     function nhan($p_tuso,$p_mauso)
     {	$ps= new PHAN_SO();
         $ps->khoitao_ps($p_tuso,$p_mauso);
-        $ps->tuso=($this->tuso*$ps->mauso)- ($ps->tuso*$this->mauso);
-        $ps->mauso= $this->mauso*$ps->mauso;
-        //$ps->toigian_ps();
+        $ps->tuso=($this->tuso*$ps->tuso);
+        $ps->mauso= ($this->mauso*$ps->mauso);
+        $ps->toigian_ps();
         return $ps;
     }
 
 }
 
 ?>
+
+
 <?php
 $tuso_1=isset($_POST['tuso_1'])?$_POST['tuso_1']:'';
 $mauso_1=isset($_POST['mauso_1'])?$_POST['mauso_1']:'';
@@ -159,8 +162,8 @@ $mauso_2=isset($_POST['mauso_2'])?$_POST['mauso_2']:'';
     <p>
         <input name="Chon_pheptinh" type="submit" value="Kết quả" />
     </p>
-
 </form>
+
 <?php
 $ps_1=new PHAN_SO();
 $ps_1->set_tuso($tuso_1);
@@ -182,11 +185,16 @@ if (isset($_POST['Chon_pheptinh']))
             $ps=$ps_1->hieu($ps_2->tuso,$ps_2->mauso);
             $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso()."-".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
             break;
-
+        case "nhân":
+            $ps=new PHAN_SO();
+            $ps=$ps_1->nhan($ps_2->tuso,$ps_2->mauso);
+            $ketqua=$ps_1->get_tuso()."/".$ps_1->get_mauso()."*".$ps_2->get_tuso()."/".$ps_2->get_mauso()."=".$ps->get_tuso()."/".$ps->get_mauso();
+            break;
     }
     echo "Phép ".$pheptinh." là : ". $ketqua;
 }
-
 ?>
+
+
 </body>
 </html>
