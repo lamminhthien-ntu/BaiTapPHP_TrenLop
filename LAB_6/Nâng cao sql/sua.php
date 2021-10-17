@@ -14,10 +14,19 @@
 </style>
 <body>
 
-	<?php 
-	include('connect.php');
-	include('master.php');
-	?>
+<?php
+include('connect.php');
+include('header.php');
+session_start();
+?>
+
+<?php
+if (isset($_SESSION['uname'])) echo 'Bạn đã đăng nhập với tên tài khoản'.$_SESSION['uname'];
+else header('Location: login.php');
+?>
+<form method="post" action="logout.php">
+    <input type="submit" value="Đăng xuất" >
+</form>
 
 	
 
