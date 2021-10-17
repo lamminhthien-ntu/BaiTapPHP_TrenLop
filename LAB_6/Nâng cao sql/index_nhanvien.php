@@ -14,8 +14,21 @@
 	?>
 
     <?php
-        if (isset($_SESSION['uname'])) echo 'Bạn đã đăng nhập với tên tài khoản'.$_SESSION['uname'];
+        if (isset($_SESSION['uname']))
+        {
+            echo 'Bạn đã đăng nhập với tên tài khoản '.$_SESSION['uname'];
+            if((time() - $_SESSION['last_login_timestamp']) > 60) // 900 = 15 * 60
+            {
+                header("location:logout.php");
+            }
+            else
+            {
+                $_SESSION['last_login_timestamp'] = time();
+            }
+
+        }
         else header('Location: login.php');
+
     ?>
     <form method="post" action="logout.php">
         <input type="submit" value="Đăng xuất" >

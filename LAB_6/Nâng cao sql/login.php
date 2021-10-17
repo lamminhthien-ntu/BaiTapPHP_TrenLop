@@ -20,7 +20,10 @@ if (isset($_POST['but_submit'])) {
 
         if ($count > 0) {
             $_SESSION['uname'] = $uname;
-             header('Location: index_nhanvien.php');
+            $_SESSION['last_login_timestamp'] = time();
+
+
+            header('Location: index_nhanvien.php');
             echo $uname;
         } else {
             echo "Mật khẩu và tài khoản không hợp lệ";
