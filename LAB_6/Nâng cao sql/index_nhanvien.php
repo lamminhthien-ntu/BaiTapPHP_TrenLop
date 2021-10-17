@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>danh sach</title>
+</head>
+<body>
+	
+
+	<?php 
+	include('connect.php');
+	include('master.php');
+	?>
+
+
+
+	<div class="container">
+		<div class="row">
+			<h2 class="text-center" style="color: blue;">Danh sách nhân viên</h2>
+            <button type="button" class="btn btn-default btn-lg"><a href="them.php">Thêm nhân viên</a></button>
+            <form action="index_nhanvien.php" method="get">
+                <input name="keyword" placeholder="" value="">
+                <input type="submit" value="Tìm nhân viên">
+            </form>
+			<table class="table">
+				<thead>
+					<tr>
+
+						<th>ID</th>
+						<th>Họ và tên</th>
+						<th>Ngay sinh</th>
+						<th>Giới tính</th>
+						<th>Địa chỉ</th>
+						<th>Ảnh</th>
+						<th>loại nhân viên</th>
+						<th>phòng</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<?php 
+						$row_sql="SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG";
+                        if (!empty($_GET['keyword']))
+                        {
+                            $search = $_GET['keyword'];
+                            $row_sql = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG and HOTEN like '%$search%'";
+                        }
+						$row_thuchien=mysqli_query($conn,$row_sql);
+//                        var_dump(mysqli_fetch_array($row_thuchien));
+						while($dulieu =mysqli_fetch_array($row_thuchien)){
+							?>
+							<td><?php echo $dulieu['MANV']; ?></td>
+							<td><?php echo $dulieu['HOTEN']; ?> </td>
+							<td><?php echo $dulieu['NGAYSINH']; ?></td>
+							<td><?php echo $dulieu['GIOITINH']; ?></td>
+							<td><?php echo $dulieu['DIACHI']; ?></td>
+							<td><?php echo $dulieu['ANH']; ?></td>
+							<td><?php echo $dulieu['TENLOAINV']; ?></td>
+							<td><?php echo $dulieu['TENPHONG']; ?></td>
+							<td>
+								<a onclick=" return confirm('bạn có chắc muốn sửa không')" href="sua.php?id=<?php echo $dulieu['id'] ?>" title="sửa"><img src="images/edit.png" width="25px">
+								</a>
+							</td>
+							<td>
+								<a onclick=" return confirm('bạn có chắc muốn xóa không') " href="xoa.php?id=<?php echo $dulieu['id']; ?>" ><img src='images/delete.jpg' width='25px' >
+								</a>
+							</td>
+						</tr>					
+					<?php 	} ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+</body>
+</html>
