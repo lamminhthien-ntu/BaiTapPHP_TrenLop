@@ -17,7 +17,7 @@
         if (isset($_SESSION['uname']))
         {
             echo 'Bạn đã đăng nhập với tên tài khoản '.$_SESSION['uname'];
-            if((time() - $_SESSION['last_login_timestamp']) > 60) // 900 = 15 * 60
+            if((time() - $_SESSION['last_login_timestamp']) > 900) // 900 = 15 * 60
             {
                 header("location:logout.php");
             }
