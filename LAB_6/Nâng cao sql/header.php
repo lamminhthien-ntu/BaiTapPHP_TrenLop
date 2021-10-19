@@ -16,7 +16,7 @@
         text-align: center;
         color: red;
         border-radius: 10px;
-        background-color: seashell;
+        /*background-color: seashell;*/
         margin-left: auto;
         margin-right: auto;
         font-size: x-large;
@@ -49,6 +49,7 @@
 
     td, th {
         border: 1px solid #dddddd;
+
         text-align: left;
         padding: 8px;
         width: 290px;
@@ -58,13 +59,10 @@
         border: solid 1px #ccc;
         border-radius: 5px 5px 5px 5px;
         font-size: 14px;
-        background-color: (rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
     }
-    }
+    tr:nth-child(even) {background-color: #c7ddef;}
 
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
+
     h2{
 
         font-size: 30px;
@@ -149,6 +147,9 @@
         height: 50px;
         border-radius: 50%;
     }
+
+
+
 
 </style>
 <body>

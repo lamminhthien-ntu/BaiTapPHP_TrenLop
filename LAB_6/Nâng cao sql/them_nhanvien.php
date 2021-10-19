@@ -73,7 +73,12 @@ if (isset($_POST['HOTEN']))
     }
 }
 
-if ($_FILES["ANH"]) $ANH = basename($_FILES["ANH"]["name"]); else $ANH = "";
+if ($_FILES["ANH"]) {
+    echo "<br>Định dạng ảnh là  $imageFileType<br>";
+    echo "<br>Dung lượng ảnh là <br>";
+    echo $_FILES["ANH"]["size"]."<br>";
+    $ANH = basename($_FILES["ANH"]["name"]);
+} else $ANH = "";
 
 
 
