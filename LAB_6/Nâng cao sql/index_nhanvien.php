@@ -5,8 +5,6 @@
 	<title>danh sach</title>
 </head>
 <body>
-	
-
 	<?php 
 	include('connect.php');
 	include('header.php');
@@ -30,6 +28,16 @@
         else header('Location: login.php');
 
     ?>
+
+    <?php
+        // determine which page number visitor is currently on
+        if (!isset($_GET['page'])) {
+            $page = 1;
+        } else {
+            $page = $_GET['page'];
+        }
+    ?>
+    ?>
     <form method="post" action="logout.php">
         <input type="submit" value="Đăng xuất" >
     </form>
@@ -38,6 +46,7 @@
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center" style="color: blue;">Danh sách nhân viên</h2>
+			<p class="text-center" style="color: lightcoral;"><?php echo "Trang".$page;?></p>
             <button type="button" class="btn btn-default btn-lg"><a href="them_nhanvien.php">Thêm nhân viên</a></button>
             <form action="index_nhanvien.php" method="get">
                 <input name="keyword" placeholder="" value="">
@@ -60,14 +69,31 @@
 				<tbody>
 					<tr>
 						<?php 
-						$row_sql="SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG";
+
+//                        var_dump(mysqli_fetch_array($row_thuchien));
+
+                        // define how many results you want per page
+                        $sql='SELECT * FROM NHANVIEN';
+                        $results_per_page = 2;
+                        $result = mysqli_query($conn, $sql);
+                        $number_of_results = mysqli_num_rows($result);
+
+                        // determine number of total pages available
+                        $number_of_pages = ceil($number_of_results/$results_per_page);
+
+
+
+                        // determine the sql LIMIT starting number for the results on the displaying page
+                        $this_page_first_result = ($page-1)*$results_per_page;
+                        $row_sql="SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG LIMIT ".$this_page_first_result.','.$results_per_page;
                         if (!empty($_GET['keyword']))
                         {
                             $search = $_GET['keyword'];
-                            $row_sql = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG and HOTEN like '%$search%'";
+                            $row_sql = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG and HOTEN like '%$search%' LIMIT ".$this_page_first_result.','.$results_per_page;
                         }
-						$row_thuchien=mysqli_query($conn,$row_sql);
-//                        var_dump(mysqli_fetch_array($row_thuchien));
+                        $row_thuchien=mysqli_query($conn,$row_sql);
+
+
 						while($dulieu =mysqli_fetch_array($row_thuchien)){
 							?>
 							<td><?php echo $dulieu['MANV']; ?></td>
@@ -90,6 +116,12 @@
 					<?php 	} ?>
 				</tbody>
 			</table>
+            <?php
+            // display the links to the pages
+            for ($page=1;$page<=$number_of_pages;$page++) {
+                echo '<a href="index_nhanvien.php?page=' . $page . '">' . $page . '</a> ';
+            }
+            ?>
 		</div>
 	</div>
 
