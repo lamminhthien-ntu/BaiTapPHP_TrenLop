@@ -14,11 +14,15 @@
 </style>
 <body>
 
+
+
 <?php
 include('connect.php');
 include('header.php');
 session_start();
 ?>
+
+
 
 <?php
 if (isset($_SESSION['uname'])) echo 'Bạn đã đăng nhập với tên tài khoản'.$_SESSION['uname'];
@@ -31,7 +35,8 @@ else header('Location: login.php');
 	
 
 
-	<?php 
+	<?php
+
 	$id=$_GET['id'];
 	$row_sql="SELECT * FROM nhanvien WHERE id='$id' ";
 	$row_thucthi=mysqli_query($conn,$row_sql);

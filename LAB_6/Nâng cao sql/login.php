@@ -34,7 +34,7 @@ if (isset($_POST['but_submit'])) {
 
 <head>
     <!-- Login CSS -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="vendor/login.css">
 </head>
 
 <body>

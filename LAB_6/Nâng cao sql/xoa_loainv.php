@@ -12,5 +12,5 @@ $id=$_GET['id'];
 //$sql="DELETE FROM nhanvien WHERE id='$id' ";
 $sql="DELETE FROM `loainv` WHERE `loainv`.`MALOAINV` = $id";
 mysqli_query($conn,$sql);
-header("location:index_nhanvien.php");
+header("location:index_loainv.php");
 ?>
