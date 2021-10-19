@@ -122,6 +122,13 @@
     button {
         color: #ff006a;
     }
+
+    .avatar {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
 </style>
 <body>
 	<div class="jumbotron text-center">

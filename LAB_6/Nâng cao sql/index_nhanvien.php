@@ -75,7 +75,7 @@
 							<td><?php echo $dulieu['NGAYSINH']; ?></td>
 							<td><?php echo $dulieu['GIOITINH']; ?></td>
 							<td><?php echo $dulieu['DIACHI']; ?></td>
-							<td><?php echo $dulieu['ANH']; ?></td>
+                        <td><img src="<?php echo 'uploads/'.$dulieu['ANH']; ?>" alt="Avatar" class="avatar"></td>
 							<td><?php echo $dulieu['TENLOAINV']; ?></td>
 							<td><?php echo $dulieu['TENPHONG']; ?></td>
 							<td>
