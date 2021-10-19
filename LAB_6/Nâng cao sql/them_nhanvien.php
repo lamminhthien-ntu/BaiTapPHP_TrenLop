@@ -29,7 +29,6 @@ if (isset($_POST['HOTEN'])) {
     $sql = "INSERT INTO `nhanvien` (`MANV`, `HOTEN`, `NGAYSINH`, `GIOITINH`, `DIACHI`, `ANH`, `MALOAINV`, `MAPHONG`) VALUES (NULL,'$HOTEN','$NGAYSINH','$GIOITINH', '$DIACHI','$ANH','$MALOAINV','$MAPHONG')";
 
     if (mysqli_query($conn, $sql)) {
-        var_dump(mysqli_query($conn, $sql));
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);

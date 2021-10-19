@@ -38,7 +38,7 @@
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center" style="color: blue;">Danh sách nhân viên</h2>
-            <button type="button" class="btn btn-default btn-lg"><a href="them.php">Thêm nhân viên</a></button>
+            <button type="button" class="btn btn-default btn-lg"><a href="them_nhanvien.php">Thêm nhân viên</a></button>
             <form action="index_nhanvien.php" method="get">
                 <input name="keyword" placeholder="" value="">
                 <input type="submit" value="Tìm nhân viên">

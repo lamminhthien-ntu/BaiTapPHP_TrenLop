@@ -27,7 +27,7 @@ else header('Location: login.php');
 <div class="container">
     <div class="row">
         <h2 class="text-center" style="color: blue;">Danh sách loại nhân viên</h2>
-        <button type="button" class="btn btn-default btn-lg"><a href="them.php">Thêm loại nhân viên</a></button>
+        <button type="button" class="btn btn-default btn-lg"><a href="them_loainv.php">Thêm loại nhân viên</a></button>
         <form action="index_loainv.php" method="get">
             <input name="keyword" placeholder="" value="">
             <input type="submit" value="Tìm loại nhân viên">

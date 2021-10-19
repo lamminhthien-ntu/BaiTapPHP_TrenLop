@@ -25,7 +25,7 @@ else header('Location: login.php');
 <div class="container">
     <div class="row">
         <h2 class="text-center" style="color: blue;">Danh sách phòng ban</h2>
-        <button type="button" class="btn btn-default btn-lg"><a href="them.php">Thêm phòng ban</a></button>
+        <button type="button" class="btn btn-default btn-lg"><a href="them_phongban.php">Thêm phòng ban</a></button>
         <form action="index_phongban.php" method="get">
             <input name="keyword" placeholder="" value="">
             <input type="submit" value="Tìm phòng ban">
