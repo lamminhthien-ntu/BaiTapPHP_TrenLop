@@ -19,6 +19,7 @@
         background-color: seashell;
         margin-left: auto;
         margin-right: auto;
+        font-size: x-large;
 
     }
     disabled {

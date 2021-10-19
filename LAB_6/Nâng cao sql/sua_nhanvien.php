@@ -104,7 +104,7 @@ if (isset($_POST['HOTEN'])) {
 </form>
 
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <td>Họ tên</td>
