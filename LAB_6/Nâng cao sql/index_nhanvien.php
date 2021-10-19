@@ -83,7 +83,7 @@
 								</a>
 							</td>
 							<td>
-								<a onclick=" return confirm('bạn có chắc muốn xóa không') " href="xoa.php?id=<?php echo $dulieu['id']; ?>" ><img src='images/delete.jpg' width='25px' >
+								<a onclick=" return confirm('bạn có chắc muốn xóa không') " href="xoa_nhanvien.php?id=<?php echo $dulieu['id']; ?>" ><img src='images/delete.jpg' width='25px' >
 								</a>
 							</td>
 						</tr>					

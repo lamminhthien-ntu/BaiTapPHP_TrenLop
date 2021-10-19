@@ -9,7 +9,8 @@ else header('Location: login.php');
 
 
 $id=$_GET['id'];
-$sql="DELETE FROM nhanvien WHERE id='$id' ";
+//$sql="DELETE FROM nhanvien WHERE id='$id' ";
+$sql="DELETE FROM `nhanvien` WHERE `nhanvien`.`MANV` = $id";
 mysqli_query($conn,$sql);
 header("location:index_nhanvien.php");
 ?>
