@@ -79,7 +79,7 @@
 							<td><?php echo $dulieu['TENLOAINV']; ?></td>
 							<td><?php echo $dulieu['TENPHONG']; ?></td>
 							<td>
-								<a onclick=" return confirm('bạn có chắc muốn sửa không')" href="sua_nhanvien.php?id=<?php echo $dulieu['id'] ?>" title="sửa"><img src="icon/edit.png" width="25px">
+								<a onclick=" return confirm('bạn có chắc muốn sửa không')" href="sua_nhanvien.php?id=<?php echo $dulieu['MANV'] ?>" title="sửa"><img src="icon/edit.png" width="25px">
 								</a>
 							</td>
 							<td>

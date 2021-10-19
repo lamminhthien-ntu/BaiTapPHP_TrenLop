@@ -7,12 +7,8 @@
 * {
     text-align: center;
     color: red;
-    font-style: italic;
-    font-weight: bolder;
-    color: red;
-    font-weight: bolder;
     border-radius: 10px;
-    background-color: beige;
+    background-color: seashell;
 }
 disabled {
     background-color: gainsboro;
@@ -29,7 +25,6 @@ form {
 }
 
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
@@ -38,7 +33,16 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    width: 290px;
+    height: 30px;
+    margin: 5px auto;
+    padding: 5px 5px 5px 50px;
+    border: solid 1px #ccc;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 14px;
+    background-color: rgb(232, 240, 254) !important;
 }
+
 
 tr:nth-child(even) {
     background-color: #dddddd;
@@ -112,4 +116,14 @@ input[type=submit]:hover {
         width: 100%;
         margin-top: 0;
     }
+}
+button {
+    color: #ff006a;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
