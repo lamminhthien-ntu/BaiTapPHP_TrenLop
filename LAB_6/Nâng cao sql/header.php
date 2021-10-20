@@ -15,6 +15,7 @@
     * {
         text-align: center;
         color: red;
+        text-shadow:5px 5px 10px #00FF00;
         border-radius: 10px;
         /*background-color: seashell;*/
         margin-left: auto;
@@ -31,6 +32,8 @@
         border: 3px solid green;
         padding: 10px;
         background-color: lightblue;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     * {
         border-radius: 10px;
@@ -47,7 +50,7 @@
         display: block
     }
 
-    td, th {
+    td {
         border: 1px solid #dddddd;
 
         text-align: left;
@@ -59,6 +62,9 @@
         border: solid 1px #ccc;
         border-radius: 5px 5px 5px 5px;
         font-size: 14px;
+    }
+    th{
+        font-size: 20px;
     }
     tr:nth-child(even) {background-color: #c7ddef;}
 
@@ -147,6 +153,13 @@
         height: 50px;
         border-radius: 50%;
     }
+    .pancakes-text {
+        font-family: Satisfy, cursive;
+        font-size: 3em;
+        margin: 1em 2em;
+        color: SandyBrown;
+        text-shadow: 0.02em 0.02em 0 Brown, 0 0 0.5em violet;
+    }
 
 
 
@@ -154,10 +167,10 @@
 </style>
 <body>
 	<div class="center text-center">
-		<h2 style="color: blueviolet;font-weight: 700;">QUẢN LÝ NHÂN VIÊN</h2>
-		<button type="button" class="btn-lg"><a href="index_nhanvien.php">nhân viên</a></button>
-		<button type="button" class="btn-lg"><a href="index_loainv.php">loại nhân viên</a></button>
-		<button type="button" class="btn-lg"><a href="index_phongban.php">phòng ban</a></button>
+		<h3 class="pancakes-text">QUẢN LÝ NHÂN VIÊN</h3>
+		<button type="button" class="btn-lg btn-outline-primary "><a href="index_nhanvien.php">nhân viên</a></button>
+		<button type="button" class="btn-lg btn-outline-success "><a href="index_loainv.php">loại nhân viên</a></button>
+		<button type="button" class="btn-lg  btn-outline-danger "><a href="index_phongban.php">phòng ban</a></button>
 
 	</div>
 </body>

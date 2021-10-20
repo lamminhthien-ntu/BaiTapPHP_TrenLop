@@ -14,7 +14,7 @@
     <?php
         if (isset($_SESSION['uname']))
         {
-            echo 'Bạn đã đăng nhập với tên tài khoản '.$_SESSION['uname'];
+            $uname= 'Chào '.$_SESSION['uname'];
             if((time() - $_SESSION['last_login_timestamp']) > 900) // 900 = 15 * 60
             {
                 header("location:logout.php");
@@ -38,8 +38,8 @@
             $page = $_GET['page'];
         }
     ?>
-    ?>
     <form method="post" action="logout.php">
+        <input   value="<?php echo $uname;?>" disabled>
         <input type="submit" value="Đăng xuất" >
     </form>
 
@@ -76,7 +76,7 @@
                         //Lệnh sql này chưa quan tâm đến join các table khác, chỉ để tính toán cho việc phân trang
                         $sql='SELECT * FROM NHANVIEN';
                         //XÁc định có bao nhiêu kết quả trong mỗi trang
-                        $results_per_page = 2;
+                        $results_per_page = 4;
                         $result = mysqli_query($conn, $sql);
                         //Đếm số dòng trong câu lệnh select ở trên
                         $number_of_results = mysqli_num_rows($result);

@@ -14,10 +14,34 @@ session_start();
 ?>
 
 <?php
-if (isset($_SESSION['uname'])) echo 'Bạn đã đăng nhập với tên tài khoản'.$_SESSION['uname'];
+if (isset($_SESSION['uname']))
+{
+    $uname= 'Chào '.$_SESSION['uname'];
+    if((time() - $_SESSION['last_login_timestamp']) > 900) // 900 = 15 * 60
+    {
+        header("location:logout.php");
+    }
+    else
+    {
+        $_SESSION['last_login_timestamp'] = time();
+    }
+
+}
 else header('Location: login.php');
+
+?>
+
+<?php
+// determine which page number visitor is currently on
+//Xác định số của trang hiện tại mà mình đang xem
+if (!isset($_GET['page'])) {
+    $page = 1;
+} else {
+    $page = $_GET['page'];
+}
 ?>
 <form method="post" action="logout.php">
+    <input   value="<?php echo $uname;?>" disabled>
     <input type="submit" value="Đăng xuất" >
 </form>
 
