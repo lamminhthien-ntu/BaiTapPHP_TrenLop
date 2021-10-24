@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://unitop.com.vn/phpmailer-php.html/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>PhpMailer: Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v13.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://unitop.com.vn/phpmailer-php.html/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PhpMailer: Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn">
+<meta property="og:description" content="Php Mailer là một thư viện giúp chúng ta có thể gửi email đến người dùng trên website một cách dễ dàng, tỉ lệ thành công cao. Nếu bạn đang muốn gửi mail khi người dùng đăng ký tài khoản, kích hoạt tài khoản, xác nhận đơn hàng, liên hệ thì đây là một công …">
+<meta property="og:url" content="https://unitop.com.vn/phpmailer-php.html/">
+<meta property="og:site_name" content="Unitop.com.vn">
+<meta property="article:tag" content="php">
+<meta property="article:section" content="Php">
+<meta property="article:published_time" content="2020-03-02T08:33:26+00:00">
+<meta property="article:modified_time" content="2020-03-02T09:57:37+00:00">
+<meta property="og:updated_time" content="2020-03-02T09:57:37+00:00">
+<meta property="og:image" content="https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop.png">
+<meta property="og:image:secure_url" content="https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Php Mailer là một thư viện giúp chúng ta có thể gửi email đến người dùng trên website một cách dễ dàng, tỉ lệ thành công cao. Nếu bạn đang muốn gửi mail khi người dùng đăng ký tài khoản, kích hoạt tài khoản, xác nhận đơn hàng, liên hệ thì đây là một công […]">
+<meta name="twitter:title" content="PhpMailer: Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn">
+<meta name="twitter:image" content="https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop.png">
+<script type="text/javascript" async="" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/analytics.js.tải xuống"></script><script type="text/javascript" async="" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/f.txt"></script><script type="text/javascript" async="" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/js"></script><script id="facebook-jssdk" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/xfbml.customerchat.js.tải xuống"></script><script async="" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/gtm.js.tải xuống"></script><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://unitop.com.vn/#website","url":"https://unitop.com.vn/","name":"Unitop.com.vn","inLanguage":"en-US","description":"H\u1ecdc l\u1eadp tr\u00ecnh web \u0111i l\u00e0m","potentialAction":{"@type":"SearchAction","target":"https://unitop.com.vn/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://unitop.com.vn/phpmailer-php.html/#primaryimage","inLanguage":"en-US","url":"https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop.png","width":1280,"height":720,"caption":"phpmailer-php-unitop"},{"@type":"WebPage","@id":"https://unitop.com.vn/phpmailer-php.html/#webpage","url":"https://unitop.com.vn/phpmailer-php.html/","name":"PhpMailer: C\u00e1ch s\u1eed d\u1ee5ng h\u00e0m g\u1eedi email \u0111\u1ebfn ng\u01b0\u1eddi d\u00f9ng trong Php - Unitop.com.vn","isPartOf":{"@id":"https://unitop.com.vn/#website"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://unitop.com.vn/phpmailer-php.html/#primaryimage"},"datePublished":"2020-03-02T08:33:26+00:00","dateModified":"2020-03-02T09:57:37+00:00","author":{"@id":"https://unitop.com.vn/#/schema/person/f2f2ed48a0fa09e6b71af2185e404e14"}},{"@type":["Person"],"@id":"https://unitop.com.vn/#/schema/person/f2f2ed48a0fa09e6b71af2185e404e14","name":"Phan V\u0103n C\u01b0\u01a1ng","image":{"@type":"ImageObject","@id":"https://unitop.com.vn/#authorlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/bbe2bd11424ed1e18694e2f2eeb40341?s=96&d=mm&r=g","caption":"Phan V\u0103n C\u01b0\u01a1ng"},"description":"T\u00f4i l\u00e0 ng\u01b0\u1eddi s\u00e1ng l\u1eadp ra h\u1ec7 th\u1ed1ng \u0111\u00e0o t\u1ea1o l\u1eadp tr\u00ecnh web online Unitop.vn. \u0110\u00e2y l\u00e0 n\u01a1i t\u00f4i chia s\u1ebb nh\u1eefng b\u00e0i vi\u1ebft v\u1ec1 l\u1eadp tr\u00ecnh, t\u00f4i hi v\u1ecdng n\u00f3 s\u1ebd gi\u00fap \u00edch cho b\u1ea1n!","sameAs":["Phan C\u01b0\u01a1ng","https://youtube.com/phancuong100unitop"]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Unitop.com.vn » Feed" href="https://unitop.com.vn/feed/">
+<link rel="alternate" type="application/rss+xml" title="Unitop.com.vn » Comments Feed" href="https://unitop.com.vn/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Unitop.com.vn » PhpMailer: Cách sử dụng hàm gửi email đến người dùng trong Php Comments Feed" href="https://unitop.com.vn/phpmailer-php.html/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/unitop.com.vn\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.7"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/wp-emoji-release.min.js.tải xuống" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="hello-elementor-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/style.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="hello-elementor-theme-style-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/theme.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-legacy-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/frontend-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/frontend.min.css" type="text/css" media="all">
+<style id="elementor-frontend-inline-css" type="text/css">
+@font-face{font-family:eicons;src:url(https://unitop.com.vn/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0);src:url(https://unitop.com.vn/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0#iefix) format("embedded-opentype"),url(https://unitop.com.vn/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.10.0) format("woff2"),url(https://unitop.com.vn/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.10.0) format("woff"),url(https://unitop.com.vn/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.10.0) format("truetype"),url(https://unitop.com.vn/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5.10.0#eicon) format("svg");font-weight:400;font-style:normal}
+.elementor-kit-1082{--e-global-color-primary:#303030;--e-global-color-secondary:#54595F;--e-global-color-text:#545454;--e-global-color-accent:#61CE70;--e-global-color-3b8d57ee:#4054B2;--e-global-color-112ecc64:#23A455;--e-global-color-560fa669:#000;--e-global-color-3d7d3820:#FFF;--e-global-color-65afc71:#F8F8F8;--e-global-color-62eb08b:#F14141;--e-global-color-f187e01:#900101;--e-global-typography-primary-font-family:"Montserrat";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Montserrat";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Montserrat";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Montserrat";--e-global-typography-accent-font-weight:500;}.elementor-kit-1082 h1{color:var( --e-global-color-text );}.elementor-kit-1082 h2{color:var( --e-global-color-secondary );}.elementor-kit-1082 h3{color:var( --e-global-color-secondary );}.elementor-kit-1082 h4{color:var( --e-global-color-secondary );}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}{}h1.post-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}}
+.elementor-widget-heading .elementor-heading-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-image .widget-image-caption{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-text-editor{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:var( --e-global-color-primary );}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap, .elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap{color:var( --e-global-color-primary );border-color:var( --e-global-color-primary );}.elementor-widget-button .elementor-button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );background-color:var( --e-global-color-accent );}.elementor-widget-divider{--divider-color:var( --e-global-color-secondary );}.elementor-widget-divider .elementor-divider__text{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-divider.elementor-view-stacked .elementor-icon{background-color:var( --e-global-color-secondary );}.elementor-widget-divider.elementor-view-framed .elementor-icon, .elementor-widget-divider.elementor-view-default .elementor-icon{color:var( --e-global-color-secondary );border-color:var( --e-global-color-secondary );}.elementor-widget-divider.elementor-view-framed .elementor-icon, .elementor-widget-divider.elementor-view-default .elementor-icon svg{fill:var( --e-global-color-secondary );}.elementor-widget-image-box .elementor-image-box-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-image-box .elementor-image-box-description{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-icon.elementor-view-stacked .elementor-icon{background-color:var( --e-global-color-primary );}.elementor-widget-icon.elementor-view-framed .elementor-icon, .elementor-widget-icon.elementor-view-default .elementor-icon{color:var( --e-global-color-primary );border-color:var( --e-global-color-primary );}.elementor-widget-icon.elementor-view-framed .elementor-icon, .elementor-widget-icon.elementor-view-default .elementor-icon svg{fill:var( --e-global-color-primary );}.elementor-widget-icon-box.elementor-view-stacked .elementor-icon{background-color:var( --e-global-color-primary );}.elementor-widget-icon-box.elementor-view-framed .elementor-icon, .elementor-widget-icon-box.elementor-view-default .elementor-icon{fill:var( --e-global-color-primary );color:var( --e-global-color-primary );border-color:var( --e-global-color-primary );}.elementor-widget-icon-box .elementor-icon-box-title{color:var( --e-global-color-primary );}.elementor-widget-icon-box .elementor-icon-box-title, .elementor-widget-icon-box .elementor-icon-box-title a{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-icon-box .elementor-icon-box-description{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-star-rating .elementor-star-rating__title{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-image-gallery .gallery-item .gallery-caption{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-icon-list .elementor-icon-list-item:not(:last-child):after{border-color:var( --e-global-color-text );}.elementor-widget-icon-list .elementor-icon-list-icon i{color:var( --e-global-color-primary );}.elementor-widget-icon-list .elementor-icon-list-icon svg{fill:var( --e-global-color-primary );}.elementor-widget-icon-list .elementor-icon-list-text{color:var( --e-global-color-secondary );}.elementor-widget-icon-list .elementor-icon-list-item > .elementor-icon-list-text, .elementor-widget-icon-list .elementor-icon-list-item > a{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-counter .elementor-counter-number-wrapper{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-counter .elementor-counter-title{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-progress .elementor-progress-wrapper .elementor-progress-bar{background-color:var( --e-global-color-primary );}.elementor-widget-progress .elementor-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-testimonial .elementor-testimonial-content{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-testimonial .elementor-testimonial-name{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-testimonial .elementor-testimonial-job{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-tabs .elementor-tab-title, .elementor-widget-tabs .elementor-tab-title a{color:var( --e-global-color-primary );}.elementor-widget-tabs .elementor-tab-title.elementor-active,
+					 .elementor-widget-tabs .elementor-tab-title.elementor-active a{color:var( --e-global-color-accent );}.elementor-widget-tabs .elementor-tab-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-tabs .elementor-tab-content{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-accordion .elementor-accordion-icon, .elementor-widget-accordion .elementor-accordion-title{color:var( --e-global-color-primary );}.elementor-widget-accordion .elementor-accordion-icon svg{fill:var( --e-global-color-primary );}.elementor-widget-accordion .elementor-active .elementor-accordion-icon, .elementor-widget-accordion .elementor-active .elementor-accordion-title{color:var( --e-global-color-accent );}.elementor-widget-accordion .elementor-active .elementor-accordion-icon svg{fill:var( --e-global-color-accent );}.elementor-widget-accordion .elementor-accordion-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-accordion .elementor-tab-content{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-toggle .elementor-toggle-title, .elementor-widget-toggle .elementor-toggle-icon{color:var( --e-global-color-primary );}.elementor-widget-toggle .elementor-toggle-icon svg{fill:var( --e-global-color-primary );}.elementor-widget-toggle .elementor-tab-title.elementor-active a, .elementor-widget-toggle .elementor-tab-title.elementor-active .elementor-toggle-icon{color:var( --e-global-color-accent );}.elementor-widget-toggle .elementor-toggle-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-toggle .elementor-tab-content{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-alert .elementor-alert-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-alert .elementor-alert-description{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-text-path{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-theme-site-logo .widget-image-caption{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-theme-site-title .elementor-heading-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-theme-page-title .elementor-heading-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-theme-post-title .elementor-heading-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-theme-post-excerpt .elementor-widget-container{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-theme-post-content{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-theme-post-featured-image .widget-image-caption{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-theme-archive-title .elementor-heading-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-archive-posts .elementor-post__title, .elementor-widget-archive-posts .elementor-post__title a{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-archive-posts .elementor-post__meta-data{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-archive-posts .elementor-post__excerpt p{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-archive-posts .elementor-post__read-more{color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-archive-posts .elementor-post__card .elementor-post__badge{background-color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-archive-posts .elementor-pagination{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-archive-posts .elementor-button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );background-color:var( --e-global-color-accent );}.elementor-widget-archive-posts .e-load-more-message{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-archive-posts .elementor-posts-nothing-found{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-posts .elementor-post__title, .elementor-widget-posts .elementor-post__title a{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-posts .elementor-post__meta-data{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-posts .elementor-post__excerpt p{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-posts .elementor-post__read-more{color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-posts .elementor-post__card .elementor-post__badge{background-color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-posts .elementor-pagination{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-posts .elementor-button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );background-color:var( --e-global-color-accent );}.elementor-widget-posts .e-load-more-message{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-portfolio a .elementor-portfolio-item__overlay{background-color:var( --e-global-color-accent );}.elementor-widget-portfolio .elementor-portfolio-item__title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-portfolio .elementor-portfolio__filter{color:var( --e-global-color-text );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-portfolio .elementor-portfolio__filter.elementor-active{color:var( --e-global-color-primary );}.elementor-widget-gallery .elementor-gallery-item__title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-gallery .elementor-gallery-item__description{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-gallery{--galleries-title-color-normal:var( --e-global-color-primary );--galleries-title-color-hover:var( --e-global-color-secondary );--galleries-pointer-bg-color-hover:var( --e-global-color-accent );--gallery-title-color-active:var( --e-global-color-secondary );--galleries-pointer-bg-color-active:var( --e-global-color-accent );}.elementor-widget-gallery .elementor-gallery-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-form .elementor-field-group > label, .elementor-widget-form .elementor-field-subgroup label{color:var( --e-global-color-text );}.elementor-widget-form .elementor-field-group > label{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-form .elementor-field-type-html{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-form .elementor-field-group .elementor-field{color:var( --e-global-color-text );}.elementor-widget-form .elementor-field-group .elementor-field, .elementor-widget-form .elementor-field-subgroup label{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-form .elementor-button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-form .e-form__buttons__wrapper__button-next{background-color:var( --e-global-color-accent );}.elementor-widget-form .elementor-button[type="submit"]{background-color:var( --e-global-color-accent );}.elementor-widget-form .e-form__buttons__wrapper__button-previous{background-color:var( --e-global-color-accent );}.elementor-widget-form .elementor-message{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-form .e-form__indicators__indicator, .elementor-widget-form .e-form__indicators__indicator__label{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-form{--e-form-steps-indicator-inactive-primary-color:var( --e-global-color-text );--e-form-steps-indicator-active-primary-color:var( --e-global-color-accent );--e-form-steps-indicator-completed-primary-color:var( --e-global-color-accent );--e-form-steps-indicator-progress-color:var( --e-global-color-accent );--e-form-steps-indicator-progress-background-color:var( --e-global-color-text );--e-form-steps-indicator-progress-meter-color:var( --e-global-color-text );}.elementor-widget-form .e-form__indicators__indicator__progress__meter{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-login .elementor-field-group > a{color:var( --e-global-color-text );}.elementor-widget-login .elementor-field-group > a:hover{color:var( --e-global-color-accent );}.elementor-widget-login .elementor-form-fields-wrapper label{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-login .elementor-field-group .elementor-field{color:var( --e-global-color-text );}.elementor-widget-login .elementor-field-group .elementor-field, .elementor-widget-login .elementor-field-subgroup label{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-login .elementor-button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );background-color:var( --e-global-color-accent );}.elementor-widget-login .elementor-widget-container .elementor-login__logged-in-message{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-slides .elementor-slide-heading{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-slides .elementor-slide-description{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-slides .elementor-slide-button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-nav-menu .elementor-nav-menu .elementor-item{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item{color:var( --e-global-color-text );fill:var( --e-global-color-text );}.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item:hover,
+					.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item.elementor-item-active,
+					.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item.highlighted,
+					.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item:focus{color:var( --e-global-color-accent );fill:var( --e-global-color-accent );}.elementor-widget-nav-menu .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item:before,
+					.elementor-widget-nav-menu .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item:after{background-color:var( --e-global-color-accent );}.elementor-widget-nav-menu .e--pointer-framed .elementor-item:before,
+					.elementor-widget-nav-menu .e--pointer-framed .elementor-item:after{border-color:var( --e-global-color-accent );}.elementor-widget-nav-menu .elementor-nav-menu--dropdown .elementor-item, .elementor-widget-nav-menu .elementor-nav-menu--dropdown  .elementor-sub-item{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-animated-headline .elementor-headline-dynamic-wrapper path{stroke:var( --e-global-color-accent );}.elementor-widget-animated-headline .elementor-headline-plain-text{color:var( --e-global-color-secondary );}.elementor-widget-animated-headline .elementor-headline{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-animated-headline{--dynamic-text-color:var( --e-global-color-secondary );}.elementor-widget-animated-headline .elementor-headline-dynamic-text{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-hotspot .widget-image-caption{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-hotspot{--hotspot-color:var( --e-global-color-primary );--hotspot-box-color:var( --e-global-color-secondary );--tooltip-color:var( --e-global-color-secondary );}.elementor-widget-hotspot .e-hotspot__label{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-hotspot .e-hotspot__tooltip{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-price-list .elementor-price-list-header{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-price-list .elementor-price-list-description{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-price-list .elementor-price-list-separator{border-bottom-color:var( --e-global-color-secondary );}.elementor-widget-price-table{--e-price-table-header-background-color:var( --e-global-color-secondary );}.elementor-widget-price-table .elementor-price-table__heading{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-price-table .elementor-price-table__subheading{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-price-table .elementor-price-table .elementor-price-table__price{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-price-table .elementor-price-table__original-price{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-price-table .elementor-price-table__period{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-price-table .elementor-price-table__features-list{--e-price-table-features-list-color:var( --e-global-color-text );}.elementor-widget-price-table .elementor-price-table__features-list li{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-price-table .elementor-price-table__features-list li:before{border-top-color:var( --e-global-color-text );}.elementor-widget-price-table .elementor-price-table__button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );background-color:var( --e-global-color-accent );}.elementor-widget-price-table .elementor-price-table__additional_info{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-price-table .elementor-price-table__ribbon-inner{background-color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-flip-box .elementor-flip-box__front .elementor-flip-box__layer__title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-flip-box .elementor-flip-box__front .elementor-flip-box__layer__description{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-flip-box .elementor-flip-box__back .elementor-flip-box__layer__title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-flip-box .elementor-flip-box__back .elementor-flip-box__layer__description{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-flip-box .elementor-flip-box__button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-call-to-action .elementor-cta__title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-call-to-action .elementor-cta__description{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-call-to-action .elementor-cta__button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-call-to-action .elementor-ribbon-inner{background-color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-media-carousel .elementor-carousel-image-overlay{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-testimonial-carousel .elementor-testimonial__text{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-testimonial-carousel .elementor-testimonial__name{color:var( --e-global-color-text );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-testimonial-carousel .elementor-testimonial__title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-reviews .elementor-testimonial__header, .elementor-widget-reviews .elementor-testimonial__name{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-reviews .elementor-testimonial__text{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-table-of-contents{--header-color:var( --e-global-color-secondary );--item-text-color:var( --e-global-color-text );--item-text-hover-color:var( --e-global-color-accent );--marker-color:var( --e-global-color-text );}.elementor-widget-table-of-contents .elementor-toc__header, .elementor-widget-table-of-contents .elementor-toc__header-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-table-of-contents .elementor-toc__list-item{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-countdown .elementor-countdown-item{background-color:var( --e-global-color-primary );}.elementor-widget-countdown .elementor-countdown-digits{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-countdown .elementor-countdown-label{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-countdown .elementor-countdown-expire--message{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-search-form input[type="search"].elementor-search-form__input{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-search-form .elementor-search-form__input,
+					.elementor-widget-search-form .elementor-search-form__icon,
+					.elementor-widget-search-form .elementor-lightbox .dialog-lightbox-close-button,
+					.elementor-widget-search-form .elementor-lightbox .dialog-lightbox-close-button:hover,
+					.elementor-widget-search-form.elementor-search-form--skin-full_screen input[type="search"].elementor-search-form__input{color:var( --e-global-color-text );fill:var( --e-global-color-text );}.elementor-widget-search-form .elementor-search-form__submit{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );background-color:var( --e-global-color-secondary );}.elementor-widget-author-box .elementor-author-box__name{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-author-box .elementor-author-box__bio{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-author-box .elementor-author-box__button{color:var( --e-global-color-secondary );border-color:var( --e-global-color-secondary );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-author-box .elementor-author-box__button:hover{border-color:var( --e-global-color-secondary );color:var( --e-global-color-secondary );}.elementor-widget-post-navigation span.post-navigation__prev--label{color:var( --e-global-color-text );}.elementor-widget-post-navigation span.post-navigation__next--label{color:var( --e-global-color-text );}.elementor-widget-post-navigation span.post-navigation__prev--label, .elementor-widget-post-navigation span.post-navigation__next--label{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-post-navigation span.post-navigation__prev--title, .elementor-widget-post-navigation span.post-navigation__next--title{color:var( --e-global-color-secondary );font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-post-info .elementor-icon-list-item:not(:last-child):after{border-color:var( --e-global-color-text );}.elementor-widget-post-info .elementor-icon-list-icon i{color:var( --e-global-color-primary );}.elementor-widget-post-info .elementor-icon-list-icon svg{fill:var( --e-global-color-primary );}.elementor-widget-post-info .elementor-icon-list-text, .elementor-widget-post-info .elementor-icon-list-text a{color:var( --e-global-color-secondary );}.elementor-widget-post-info .elementor-icon-list-item{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-sitemap .elementor-sitemap-title{color:var( --e-global-color-primary );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );}.elementor-widget-sitemap .elementor-sitemap-item, .elementor-widget-sitemap span.elementor-sitemap-list, .elementor-widget-sitemap .elementor-sitemap-item a{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-sitemap .elementor-sitemap-item{color:var( --e-global-color-text );}.elementor-widget-breadcrumbs{font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-widget-blockquote .elementor-blockquote__content{color:var( --e-global-color-text );}.elementor-widget-blockquote .elementor-blockquote__author{color:var( --e-global-color-secondary );}.elementor-widget-lottie{--caption-color:var( --e-global-color-text );}.elementor-widget-lottie .e-lottie__caption{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-video-playlist .e-tabs-header .e-tabs-title{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tabs-header .e-tabs-videos-count{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tabs-header .e-tabs-header-right-side i{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tabs-header .e-tabs-header-right-side svg{fill:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tab-title .e-tab-title-text{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-video-playlist .e-tab-title .e-tab-title-text a{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tab-title .e-tab-duration{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text{color:var( --e-global-color-text );font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-video-playlist .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-title-text a{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tabs-items-wrapper .e-tab-title:where( .e-active, :hover ) .e-tab-duration{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tabs-items-wrapper .e-section-title{color:var( --e-global-color-text );}.elementor-widget-video-playlist .e-tabs-inner-tabs .e-inner-tabs-wrapper .e-inner-tab-title a{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-video-playlist .e-tabs-inner-tabs .e-inner-tabs-content-wrapper .e-inner-tab-content .e-inner-tab-text{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}.elementor-widget-video-playlist .e-tabs-inner-tabs .e-inner-tabs-content-wrapper .e-inner-tab-content button{color:var( --e-global-color-text );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );}.elementor-widget-video-playlist .e-tabs-inner-tabs .e-inner-tabs-content-wrapper .e-inner-tab-content button:hover{color:var( --e-global-color-text );}.elementor-widget-paypal-button .elementor-button{font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-weight:var( --e-global-typography-accent-font-weight );background-color:var( --e-global-color-accent );}.elementor-widget-paypal-button .elementor-message{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );}
+.elementor-1477 .elementor-element.elementor-element-6a4a9063 > .elementor-container{max-width:1140px;min-height:64px;}.elementor-1477 .elementor-element.elementor-element-6a4a9063 > .elementor-container > .elementor-row > .elementor-column > .elementor-column-wrap > .elementor-widget-wrap{align-content:space-between;align-items:space-between;}.elementor-1477 .elementor-element.elementor-element-6a4a9063:not(.elementor-motion-effects-element-type-background), .elementor-1477 .elementor-element.elementor-element-6a4a9063 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:transparent;background-image:linear-gradient(130deg, #171717 0%, #0A0A0A 100%);}.elementor-1477 .elementor-element.elementor-element-6a4a9063{box-shadow:0px 10px 20px 0px rgba(0,0,0,0.1);transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;margin-top:0px;margin-bottom:-90px;z-index:10;}.elementor-1477 .elementor-element.elementor-element-6a4a9063 > .elementor-background-overlay{transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-bc-flex-widget .elementor-1477 .elementor-element.elementor-element-6013a8c3.elementor-column .elementor-column-wrap{align-items:center;}.elementor-1477 .elementor-element.elementor-element-6013a8c3.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-1477 .elementor-element.elementor-element-eec2297{text-align:left;}.elementor-1477 .elementor-element.elementor-element-eec2297 img{width:120px;}.elementor-bc-flex-widget .elementor-1477 .elementor-element.elementor-element-7211cc1a.elementor-column .elementor-column-wrap{align-items:center;}.elementor-1477 .elementor-element.elementor-element-7211cc1a.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-1477 .elementor-element.elementor-element-7211cc1a > .elementor-element-populated{padding:0px 20px 0px 0px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-menu-toggle{margin-left:auto;background-color:rgba(255,255,255,0);font-size:25px;border-width:0px;border-radius:0px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu .elementor-item{font-family:"Varela Round", Sans-serif;font-size:15px;font-weight:300;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main .elementor-item{color:#ffffff;fill:#ffffff;padding-left:0px;padding-right:0px;padding-top:20px;padding-bottom:20px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main .elementor-item:hover,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main .elementor-item.elementor-item-active,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main .elementor-item.highlighted,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main .elementor-item:focus{color:#ffffff;fill:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item:before,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item:after{background-color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed .elementor-item:before,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed .elementor-item:after{border-color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main .elementor-item.elementor-item-active{color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item.elementor-item-active:before,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item.elementor-item-active:after{background-color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed .elementor-item.elementor-item-active:before,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed .elementor-item.elementor-item-active:after{border-color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed .elementor-item:before{border-width:2px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed.e--animation-draw .elementor-item:before{border-width:0 0 2px 2px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed.e--animation-draw .elementor-item:after{border-width:2px 2px 0 0;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed.e--animation-corners .elementor-item:before{border-width:2px 0 0 2px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-framed.e--animation-corners .elementor-item:after{border-width:0 2px 2px 0;}.elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-underline .elementor-item:after,
+					 .elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-overline .elementor-item:before,
+					 .elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-double-line .elementor-item:before,
+					 .elementor-1477 .elementor-element.elementor-element-fe5194c .e--pointer-double-line .elementor-item:after{height:2px;}body:not(.rtl) .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--layout-horizontal .elementor-nav-menu > li:not(:last-child){margin-right:30px;}body.rtl .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--layout-horizontal .elementor-nav-menu > li:not(:last-child){margin-left:30px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main:not(.elementor-nav-menu--layout-horizontal) .elementor-nav-menu > li:not(:last-child){margin-bottom:30px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a, .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-menu-toggle{color:#3d4459;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown{background-color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a:hover,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a.elementor-item-active,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a.highlighted,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-menu-toggle:hover{color:#4632da;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a:hover,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a.elementor-item-active,
+					.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a.highlighted{background-color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a.elementor-item-active{color:#4632da;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown .elementor-item, .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown  .elementor-sub-item{font-family:"Montserrat", Sans-serif;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main .elementor-nav-menu--dropdown, .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu__container.elementor-nav-menu--dropdown{box-shadow:0px 2px 15px 0px rgba(0,0,0,0.1);}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a{padding-left:16px;padding-right:16px;padding-top:15px;padding-bottom:15px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown li:not(:last-child){border-style:solid;border-color:#efefef;border-bottom-width:1px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main > .elementor-nav-menu > li > .elementor-nav-menu--dropdown, .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu__container.elementor-nav-menu--dropdown{margin-top:0px !important;}.elementor-1477 .elementor-element.elementor-element-fe5194c div.elementor-menu-toggle{color:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c div.elementor-menu-toggle svg{fill:#ffffff;}.elementor-1477 .elementor-element.elementor-element-fe5194c div.elementor-menu-toggle:hover{color:#ffffff;}@media(max-width:1024px){.elementor-1477 .elementor-element.elementor-element-6013a8c3 > .elementor-element-populated{padding:0% 0% 0% 5%;}.elementor-1477 .elementor-element.elementor-element-7211cc1a > .elementor-element-populated{padding:0% 0% 0% 5%;}body:not(.rtl) .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--layout-horizontal .elementor-nav-menu > li:not(:last-child){margin-right:18px;}body.rtl .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--layout-horizontal .elementor-nav-menu > li:not(:last-child){margin-left:18px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main:not(.elementor-nav-menu--layout-horizontal) .elementor-nav-menu > li:not(:last-child){margin-bottom:18px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown .elementor-item, .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown  .elementor-sub-item{font-size:16px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--dropdown a{padding-top:25px;padding-bottom:25px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main > .elementor-nav-menu > li > .elementor-nav-menu--dropdown, .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu__container.elementor-nav-menu--dropdown{margin-top:0px !important;}.elementor-1477 .elementor-element.elementor-element-fe5194c > .elementor-widget-container{padding:0px 10px 0px 0px;}}@media(min-width:768px){.elementor-1477 .elementor-element.elementor-element-6013a8c3{width:12.719%;}.elementor-1477 .elementor-element.elementor-element-7211cc1a{width:87.281%;}}@media(max-width:1024px) and (min-width:768px){.elementor-1477 .elementor-element.elementor-element-6013a8c3{width:15%;}.elementor-1477 .elementor-element.elementor-element-7211cc1a{width:85%;}}@media(max-width:767px){.elementor-1477 .elementor-element.elementor-element-6a4a9063{padding:0px 0px 0px 0px;}.elementor-1477 .elementor-element.elementor-element-6013a8c3{width:50%;}.elementor-1477 .elementor-element.elementor-element-6013a8c3 > .elementor-element-populated{padding:0px 0px 0px 20px;}.elementor-1477 .elementor-element.elementor-element-eec2297{text-align:left;}.elementor-1477 .elementor-element.elementor-element-7211cc1a{width:50%;}.elementor-1477 .elementor-element.elementor-element-7211cc1a > .elementor-element-populated{padding:0px 0px 0px 0px;}.elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu--main > .elementor-nav-menu > li > .elementor-nav-menu--dropdown, .elementor-1477 .elementor-element.elementor-element-fe5194c .elementor-nav-menu__container.elementor-nav-menu--dropdown{margin-top:0px !important;}.elementor-1477 .elementor-element.elementor-element-fe5194c > .elementor-widget-container{padding:0px 20px 0px 0px;}}
+.elementor-1498 .elementor-element.elementor-element-292ab11b > .elementor-container > .elementor-row > .elementor-column > .elementor-column-wrap > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-1498 .elementor-element.elementor-element-292ab11b:not(.elementor-motion-effects-element-type-background), .elementor-1498 .elementor-element.elementor-element-292ab11b > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#f2f2f2;}.elementor-1498 .elementor-element.elementor-element-292ab11b{transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;padding:30px 0px 30px 0px;}.elementor-1498 .elementor-element.elementor-element-292ab11b > .elementor-background-overlay{transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-1498 .elementor-element.elementor-element-479c0e2f > .elementor-container > .elementor-row > .elementor-column > .elementor-column-wrap > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-1498 .elementor-element.elementor-element-701ce8c8{text-align:left;}.elementor-1498 .elementor-element.elementor-element-701ce8c8 .elementor-heading-title{color:#54595f;font-size:13px;font-weight:300;}.elementor-1498 .elementor-element.elementor-element-500cd193{--grid-template-columns:repeat(0, auto);--icon-size:14px;--grid-column-gap:20px;--grid-row-gap:0px;}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-widget-container{text-align:right;}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-social-icon{background-color:rgba(0,0,0,0);--icon-padding:0em;}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-social-icon i{color:rgba(84,89,95,0.73);}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-social-icon svg{fill:rgba(84,89,95,0.73);}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-social-icon:hover{background-color:rgba(255,255,255,0);}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-social-icon:hover i{color:#00ce1b;}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-social-icon:hover svg{fill:#00ce1b;}@media(max-width:1024px) and (min-width:768px){.elementor-1498 .elementor-element.elementor-element-44980376{width:100%;}}@media(max-width:1024px){.elementor-1498 .elementor-element.elementor-element-292ab11b{padding:30px 20px 30px 20px;}.elementor-1498 .elementor-element.elementor-element-500cd193{--icon-size:13px;--grid-column-gap:10px;}}@media(max-width:767px){.elementor-1498 .elementor-element.elementor-element-292ab11b{padding:25px 20px 25px 20px;}.elementor-1498 .elementor-element.elementor-element-44980376{width:100%;}.elementor-1498 .elementor-element.elementor-element-701ce8c8{text-align:center;}.elementor-1498 .elementor-element.elementor-element-701ce8c8 .elementor-heading-title{line-height:19px;}.elementor-1498 .elementor-element.elementor-element-500cd193 .elementor-widget-container{text-align:center;}}
+.elementor-1482 .elementor-element.elementor-element-4ecde176 > .elementor-container{max-width:750px;min-height:500px;}.elementor-1482 .elementor-element.elementor-element-4ecde176:not(.elementor-motion-effects-element-type-background), .elementor-1482 .elementor-element.elementor-element-4ecde176 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:transparent;background-image:linear-gradient(130deg, #0700dd 0%, #00f2ff 89%);}.elementor-1482 .elementor-element.elementor-element-4ecde176 > .elementor-background-overlay{background-image:url("https://unitop.com.vn/wp-content/uploads/2021/10/Post-BG.png");background-position:center center;background-repeat:no-repeat;background-size:cover;opacity:0.15;transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-1482 .elementor-element.elementor-element-4ecde176{transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;}.elementor-1482 .elementor-element.elementor-element-4ecde176 > .elementor-shape-bottom svg{width:calc(260% + 1.3px);height:120px;transform:translateX(-50%) rotateY(180deg);}.elementor-1482 .elementor-element.elementor-element-3f51b839 > .elementor-element-populated{padding:0px 50px 0px 50px;}.elementor-1482 .elementor-element.elementor-element-7edc915{text-align:center;}.elementor-1482 .elementor-element.elementor-element-7edc915 .elementor-heading-title{color:#ffffff;font-family:"Varela Round", Sans-serif;font-size:45px;font-weight:300;text-transform:capitalize;line-height:1.2em;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child){padding-bottom:calc(50px/2);}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child){margin-top:calc(50px/2);}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:calc(50px/2);margin-left:calc(50px/2);}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items.elementor-inline-items{margin-right:calc(-50px/2);margin-left:calc(-50px/2);}body.rtl .elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{left:calc(-50px/2);}body:not(.rtl) .elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{right:calc(-50px/2);}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-item:not(:last-child):after{content:"";height:100%;border-color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child):after{border-top-style:solid;border-top-width:1px;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:not(:last-child):after{border-left-style:solid;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-inline-items .elementor-icon-list-item:not(:last-child):after{border-left-width:1px;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-icon{width:0px;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-icon i{font-size:0px;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-icon svg{--e-icon-list-icon-size:0px;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-text, .elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-text a{color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-7af163a9 .elementor-icon-list-item{font-family:"Montserrat", Sans-serif;font-size:16px;font-weight:300;}.elementor-1482 .elementor-element.elementor-element-5d30be12 > .elementor-container{max-width:750px;}.elementor-1482 .elementor-element.elementor-element-5d30be12{margin-top:-120px;margin-bottom:0px;}.elementor-1482 .elementor-element.elementor-element-41046cea > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute){margin-bottom:10px;}.elementor-1482 .elementor-element.elementor-element-41046cea > .elementor-element-populated{padding:0px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-286631fd img{border-radius:15px 15px 15px 15px;box-shadow:0px 0px 20px 0px rgba(0,0,0,0.2);}.elementor-1482 .elementor-element.elementor-element-8fde32f .elementor-spacer-inner{height:50px;}.elementor-1482 .elementor-element.elementor-element-75cbade4{text-align:left;color:#3d4459;font-family:"Montserrat", Sans-serif;font-size:16px;font-weight:300;line-height:1.6em;}.elementor-1482 .elementor-element.elementor-element-7c13d274 > .elementor-container{min-height:300px;}.elementor-1482 .elementor-element.elementor-element-7c13d274 > .elementor-background-overlay{background-image:url("https://unitop.com.vn/wp-content/uploads/2021/10/BG-Post-Sub.png");background-position:center center;background-repeat:no-repeat;background-size:cover;opacity:1;transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-1482 .elementor-element.elementor-element-7c13d274, .elementor-1482 .elementor-element.elementor-element-7c13d274 > .elementor-background-overlay{border-radius:15px 15px 15px 15px;}.elementor-1482 .elementor-element.elementor-element-7c13d274{box-shadow:0px 0px 25px 0px rgba(0,0,0,0.1);transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;margin-top:80px;margin-bottom:80px;}.elementor-bc-flex-widget .elementor-1482 .elementor-element.elementor-element-34a6d054.elementor-column .elementor-column-wrap{align-items:center;}.elementor-1482 .elementor-element.elementor-element-34a6d054.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-1482 .elementor-element.elementor-element-34a6d054 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute){margin-bottom:10px;}.elementor-1482 .elementor-element.elementor-element-34a6d054 > .elementor-element-populated{padding:0px 50px 0px 50px;}.elementor-1482 .elementor-element.elementor-element-414d1aab{text-align:center;}.elementor-1482 .elementor-element.elementor-element-414d1aab .elementor-heading-title{color:#4632da;font-family:"Varela Round", Sans-serif;font-size:26px;font-weight:300;text-transform:capitalize;line-height:1.2em;}.elementor-1482 .elementor-element.elementor-element-74d04d09{text-align:center;}.elementor-1482 .elementor-element.elementor-element-74d04d09 .elementor-heading-title{color:#3d4459;font-family:"Montserrat", Sans-serif;font-size:16px;font-weight:300;text-transform:capitalize;line-height:1.5em;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-button .elementor-align-icon-right{margin-left:10px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-button .elementor-align-icon-left{margin-right:10px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group{padding-right:calc( 20px/2 );padding-left:calc( 20px/2 );margin-bottom:10px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-form-fields-wrapper{margin-left:calc( -20px/2 );margin-right:calc( -20px/2 );margin-bottom:-10px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group.recaptcha_v3-bottomleft, .elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group.recaptcha_v3-bottomright{margin-bottom:0;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-type-html{padding-bottom:0px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group .elementor-field{color:#353535;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group .elementor-field, .elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-subgroup label{font-family:"Montserrat", Sans-serif;font-size:15px;font-weight:300;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group:not(.elementor-field-type-upload) .elementor-field:not(.elementor-select-wrapper){background-color:#ffffff;border-color:#eaeaea;border-width:1px 1px 1px 1px;border-radius:30px 30px 30px 30px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group .elementor-select-wrapper select{background-color:#ffffff;border-color:#eaeaea;border-width:1px 1px 1px 1px;border-radius:30px 30px 30px 30px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group .elementor-select-wrapper::before{color:#eaeaea;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-button{font-family:"Montserrat", Sans-serif;font-size:15px;font-weight:500;text-transform:capitalize;border-radius:30px 30px 30px 30px;padding:0px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .e-form__buttons__wrapper__button-next{background-color:#00dafc;color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-button[type="submit"]{background-color:#00dafc;color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-button[type="submit"] svg *{fill:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .e-form__buttons__wrapper__button-previous{color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .e-form__buttons__wrapper__button-next:hover{background-color:#4632da;color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-button[type="submit"]:hover{background-color:#4632da;color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-button[type="submit"]:hover svg *{fill:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .e-form__buttons__wrapper__button-previous:hover{color:#ffffff;}.elementor-1482 .elementor-element.elementor-element-648a4c24{--e-form-steps-indicators-spacing:20px;--e-form-steps-indicator-padding:30px;--e-form-steps-indicator-inactive-secondary-color:#ffffff;--e-form-steps-indicator-active-secondary-color:#ffffff;--e-form-steps-indicator-completed-secondary-color:#ffffff;--e-form-steps-divider-width:1px;--e-form-steps-divider-gap:10px;}.elementor-1482 .elementor-element.elementor-element-24daaa76 span.post-navigation__prev--label{color:#4632da;}.elementor-1482 .elementor-element.elementor-element-24daaa76 span.post-navigation__next--label{color:#4632da;}.elementor-1482 .elementor-element.elementor-element-24daaa76 span.post-navigation__prev--label, .elementor-1482 .elementor-element.elementor-element-24daaa76 span.post-navigation__next--label{font-family:"Varela Round", Sans-serif;font-size:16px;}.elementor-1482 .elementor-element.elementor-element-24daaa76 span.post-navigation__prev--title, .elementor-1482 .elementor-element.elementor-element-24daaa76 span.post-navigation__next--title{color:#3d4459;font-family:"Montserrat", Sans-serif;font-size:18px;font-weight:300;}.elementor-1482 .elementor-element.elementor-element-24daaa76 .post-navigation__arrow-wrapper{color:#4632da;font-size:20px;}body:not(.rtl) .elementor-1482 .elementor-element.elementor-element-24daaa76 .post-navigation__arrow-prev{padding-right:20px;}body:not(.rtl) .elementor-1482 .elementor-element.elementor-element-24daaa76 .post-navigation__arrow-next{padding-left:20px;}body.rtl .elementor-1482 .elementor-element.elementor-element-24daaa76 .post-navigation__arrow-prev{padding-left:20px;}body.rtl .elementor-1482 .elementor-element.elementor-element-24daaa76 .post-navigation__arrow-next{padding-right:20px;}.elementor-1482 .elementor-element.elementor-element-24daaa76 .elementor-post-navigation__separator{background-color:rgba(159,163,173,0.2);width:1px;}.elementor-1482 .elementor-element.elementor-element-24daaa76 .elementor-post-navigation{color:rgba(159,163,173,0.2);border-top-width:1px;border-bottom-width:1px;padding:45px 0;}.elementor-1482 .elementor-element.elementor-element-24daaa76 .elementor-post-navigation__next.elementor-post-navigation__link{width:calc(50% - (1px / 2));}.elementor-1482 .elementor-element.elementor-element-24daaa76 .elementor-post-navigation__prev.elementor-post-navigation__link{width:calc(50% - (1px / 2));}.elementor-1482 .elementor-element.elementor-element-24daaa76 > .elementor-widget-container{margin:0px 0px 50px 0px;}.elementor-1482 .elementor-element.elementor-element-5643efc6 .elementor-heading-title{color:#4632da;font-family:"Varela Round", Sans-serif;font-size:24px;font-weight:300;text-transform:capitalize;line-height:1.2em;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-posts-container .elementor-post__thumbnail{padding-bottom:calc( 0.5 * 100% );}.elementor-1482 .elementor-element.elementor-element-4acef1f2:after{content:"0.5";}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__meta-data span + span:before{content:"•";}.elementor-1482 .elementor-element.elementor-element-4acef1f2{--grid-column-gap:30px;--grid-row-gap:30px;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__card{border-radius:10px;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__text{padding:0 35px;margin-top:10px;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__meta-data{padding:10px 35px;color:rgba(61,68,89,0.5);font-family:"Montserrat", Sans-serif;font-size:14px;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__avatar{padding-right:35px;padding-left:35px;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__title, .elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__title a{color:#4632da;font-family:"Varela Round", Sans-serif;font-size:20px;text-transform:capitalize;line-height:1.4em;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__meta-data span:before{color:rgba(61,68,89,0.5);}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__excerpt p{font-family:"Montserrat", Sans-serif;font-size:16px;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-post__excerpt{margin-bottom:20px;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 > .elementor-widget-container{margin:35px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-4a9f72ef > .elementor-container{max-width:1200px;}.elementor-1482 .elementor-element.elementor-element-4a9f72ef:not(.elementor-motion-effects-element-type-background), .elementor-1482 .elementor-element.elementor-element-4a9f72ef > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:transparent;background-image:linear-gradient(130deg, #0700dd 0%, #00f2ff 89%);}.elementor-1482 .elementor-element.elementor-element-4a9f72ef > .elementor-background-overlay{background-image:url("https://unitop.com.vn/wp-content/uploads/2021/10/CTA-Shapes.png");background-position:center center;background-repeat:no-repeat;background-size:cover;opacity:0.15;transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-1482 .elementor-element.elementor-element-4a9f72ef{transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;margin-top:250px;margin-bottom:0px;padding:0px 0px 50px 0px;}.elementor-1482 .elementor-element.elementor-element-4a9f72ef > .elementor-shape-top svg{width:calc(230% + 1.3px);height:100px;transform:translateX(-50%) rotateY(180deg);}.elementor-bc-flex-widget .elementor-1482 .elementor-element.elementor-element-744e95c8.elementor-column .elementor-column-wrap{align-items:center;}.elementor-1482 .elementor-element.elementor-element-744e95c8.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-1482 .elementor-element.elementor-element-744e95c8 > .elementor-element-populated{padding:50px 30px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-6f2861b8{text-align:left;}.elementor-1482 .elementor-element.elementor-element-6f2861b8 .elementor-heading-title{color:#ffffff;font-family:"Varela Round", Sans-serif;font-size:45px;font-weight:300;text-transform:capitalize;line-height:1.2em;}.elementor-1482 .elementor-element.elementor-element-349b569d{text-align:left;}.elementor-1482 .elementor-element.elementor-element-349b569d .elementor-heading-title{color:#ffffff;font-family:"Montserrat", Sans-serif;font-size:20px;font-weight:400;text-transform:capitalize;line-height:1.5em;}.elementor-1482 .elementor-element.elementor-element-14c93e43 .elementor-button .elementor-align-icon-right{margin-left:10px;}.elementor-1482 .elementor-element.elementor-element-14c93e43 .elementor-button .elementor-align-icon-left{margin-right:10px;}.elementor-1482 .elementor-element.elementor-element-14c93e43 .elementor-button{font-family:"Montserrat", Sans-serif;font-size:15px;font-weight:500;text-transform:capitalize;fill:#00dafc;color:#00dafc;background-color:#ffffff;border-radius:30px 30px 30px 30px;box-shadow:0px 0px 30px 0px rgba(0,0,0,0.1);}.elementor-1482 .elementor-element.elementor-element-14c93e43 .elementor-button:hover, .elementor-1482 .elementor-element.elementor-element-14c93e43 .elementor-button:focus{color:#ffffff;background-color:#00dafc;}.elementor-1482 .elementor-element.elementor-element-14c93e43 .elementor-button:hover svg, .elementor-1482 .elementor-element.elementor-element-14c93e43 .elementor-button:focus svg{fill:#ffffff;}.elementor-1482 .elementor-element.elementor-element-14c93e43 > .elementor-widget-container{margin:50px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-24800dd4 > .elementor-element-populated{padding:0px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-4d07ca7{text-align:right;}.elementor-1482 .elementor-element.elementor-element-4d07ca7 img{border-radius:300px 100px 100px 100px;box-shadow:0px 0px 30px 0px rgba(0,0,0,0.12);}.elementor-1482 .elementor-element.elementor-element-4d07ca7 > .elementor-widget-container{margin:-10% 0% 0% 0%;}@media(max-width:1024px){.elementor-1482 .elementor-element.elementor-element-4ecde176 > .elementor-container{min-height:650px;}.elementor-1482 .elementor-element.elementor-element-4ecde176 > .elementor-shape-bottom svg{height:195px;}.elementor-1482 .elementor-element.elementor-element-4ecde176{padding:0% 5% 0% 5%;}.elementor-1482 .elementor-element.elementor-element-7edc915 .elementor-heading-title{font-size:40px;}.elementor-1482 .elementor-element.elementor-element-5d30be12{padding:0px 30px 0px 30px;}.elementor-1482 .elementor-element.elementor-element-414d1aab .elementor-heading-title{font-size:35px;}.elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-group .elementor-field, .elementor-1482 .elementor-element.elementor-element-648a4c24 .elementor-field-subgroup label{font-size:14px;}.elementor-1482 .elementor-element.elementor-element-5643efc6 .elementor-heading-title{font-size:24px;}.elementor-1482 .elementor-element.elementor-element-4a9f72ef > .elementor-background-overlay{background-position:center left;}.elementor-1482 .elementor-element.elementor-element-4a9f72ef > .elementor-shape-top svg{height:70px;}.elementor-1482 .elementor-element.elementor-element-4a9f72ef{padding:5% 5% 5% 5%;}.elementor-1482 .elementor-element.elementor-element-744e95c8 > .elementor-element-populated{padding:0px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-6f2861b8 .elementor-heading-title{font-size:34px;}.elementor-1482 .elementor-element.elementor-element-14c93e43 > .elementor-widget-container{margin:20px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-24800dd4 > .elementor-element-populated{padding:0px 0px 0px 020px;}.elementor-1482 .elementor-element.elementor-element-4d07ca7 > .elementor-widget-container{margin:-16% 0% 0% 0%;}}@media(max-width:767px){.elementor-1482 .elementor-element.elementor-element-4ecde176 > .elementor-container{min-height:500px;}.elementor-1482 .elementor-element.elementor-element-4ecde176{padding:10% 5% 0% 5%;}.elementor-1482 .elementor-element.elementor-element-3f51b839 > .elementor-element-populated{padding:0px 0px 0px 0px;}.elementor-1482 .elementor-element.elementor-element-7edc915{text-align:center;}.elementor-1482 .elementor-element.elementor-element-7edc915 .elementor-heading-title{font-size:30px;}.elementor-1482 .elementor-element.elementor-element-5d30be12{padding:20px 20px 0px 20px;}.elementor-1482 .elementor-element.elementor-element-286631fd{text-align:center;}.elementor-1482 .elementor-element.elementor-element-7c13d274 > .elementor-background-overlay{background-position:-543px 0px;}.elementor-1482 .elementor-element.elementor-element-34a6d054 > .elementor-element-populated{padding:50px 30px 50px 30px;}.elementor-1482 .elementor-element.elementor-element-414d1aab{text-align:center;}.elementor-1482 .elementor-element.elementor-element-414d1aab .elementor-heading-title{font-size:24px;line-height:1.4em;}.elementor-1482 .elementor-element.elementor-element-74d04d09{text-align:center;}.elementor-1482 .elementor-element.elementor-element-74d04d09 .elementor-heading-title{font-size:18px;}.elementor-1482 .elementor-element.elementor-element-5643efc6{text-align:center;}.elementor-1482 .elementor-element.elementor-element-5643efc6 .elementor-heading-title{font-size:24px;line-height:1.4em;}.elementor-1482 .elementor-element.elementor-element-4acef1f2 .elementor-posts-container .elementor-post__thumbnail{padding-bottom:calc( 0.5 * 100% );}.elementor-1482 .elementor-element.elementor-element-4acef1f2:after{content:"0.5";}.elementor-1482 .elementor-element.elementor-element-4a9f72ef{margin-top:0150px;margin-bottom:0px;padding:15% 5% 5% 5%;}.elementor-1482 .elementor-element.elementor-element-744e95c8 > .elementor-element-populated{padding:5% 5% 5% 5%;}.elementor-1482 .elementor-element.elementor-element-6f2861b8{text-align:center;}.elementor-1482 .elementor-element.elementor-element-6f2861b8 .elementor-heading-title{font-size:28px;}.elementor-1482 .elementor-element.elementor-element-349b569d{text-align:center;}.elementor-1482 .elementor-element.elementor-element-4d07ca7 > .elementor-widget-container{margin:20% 0% -15% 0%;}}
+</style>
+<link rel="stylesheet" id="elementor-pro-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/frontend.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-5-all-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/v4-shims.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="enlighterjs-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/enlighterjs.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-shared-0-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/fontawesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-fa-solid-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/solid.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-fa-brands-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/brands.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/v4-shims.min.js.tải xuống"></script>
+<link rel="https://api.w.org/" href="https://unitop.com.vn/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://unitop.com.vn/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://unitop.com.vn/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.4.7">
+<link rel="shortlink" href="https://unitop.com.vn/?p=654">
+<link rel="alternate" type="application/json+oembed" href="https://unitop.com.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Funitop.com.vn%2Fphpmailer-php.html%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://unitop.com.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Funitop.com.vn%2Fphpmailer-php.html%2F&amp;format=xml">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5SJHB9F');</script>
+<!-- End Google Tag Manager --><script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script><script src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/f(1).txt"></script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+<body data-rsssl="1" class="post-template-default single single-post postid-654 single-format-standard wp-custom-logo elementor-default elementor-kit-1082 elementor-page-1482 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="tablet">
+
+<!-- Messenger Plugin chat Code -->
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div><div id="fb-customer-chat" class="fb-customerchat fb_invisible_flow fb_iframe_widget" page_id="2225347614408705" attribution="biz_inbox" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;attribution=biz_inbox&amp;container_width=0&amp;current_url=https%3A%2F%2Funitop.com.vn%2Fphpmailer-php.html%2F&amp;locale=vi_VN&amp;log_id=6f102bd3-e2ff-419e-a8d2-0efb1c17664b&amp;page_id=2225347614408705&amp;request_time=1634851666019&amp;sdk=joey"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f17694b90a8f508" width="1000px" height="1000px" data-testid="fb:customerchat Facebook Social Plugin" title="" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/customerchat.html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></div></div>
+
+    <!-- Your Plugin chat code -->
+    
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "2225347614408705");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v11.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>		<div data-elementor-type="header" data-elementor-id="1477" class="elementor elementor-1477 elementor-location-header" data-elementor-settings="[]">
+		<div class="elementor-section-wrap">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-6a4a9063 elementor-section-height-min-height elementor-section-content-space-between elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-sticky elementor-sticky--effects elementor-sticky--active elementor-section--handles-inside" data-id="6a4a9063" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}" style="position: fixed; margin-top: 0px; margin-bottom: 0px; top: 0px; width: 750px; left: 0px;">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6013a8c3" data-id="6013a8c3" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-eec2297 elementor-widget elementor-widget-image" data-id="eec2297" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://unitop.com.vn/">
+							<img width="195" height="34" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/logo.png" class="attachment-full size-full" alt="">								</a>
+														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7211cc1a" data-id="7211cc1a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-fe5194c elementor-nav-menu__align-right elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-mobile elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="fe5194c" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+						<nav migration_allowed="1" migrated="0" role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-drop-out"><ul id="menu-1-fe5194c" class="elementor-nav-menu" data-smartmenus-id="163485166515032"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-796"><a href="https://unitop.com.vn/tag/tu-van/" class="elementor-item">Góc tư vấn</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1512"><a href="https://unitop.com.vn/blog/" class="elementor-item">Blog</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1743"><a href="https://unitop.com.vn/html-css/" class="elementor-item has-submenu" id="sm-163485166515032-1" aria-haspopup="true" aria-controls="sm-163485166515032-2" aria-expanded="false">Html Css<span class="sub-arrow"><i class="fas fa-caret-down"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-163485166515032-2" role="group" aria-hidden="true" aria-labelledby="sm-163485166515032-1" aria-expanded="false">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1748"><a href="https://unitop.com.vn/html-css/" class="elementor-sub-item">Học html css qua ví dụ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1744"><a href="https://unitop.com.vn/html-css/responsive/" class="elementor-sub-item">Responsive</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1746"><a href="https://unitop.com.vn/javascript/" class="elementor-item has-submenu" id="sm-163485166515032-3" aria-haspopup="true" aria-controls="sm-163485166515032-4" aria-expanded="false">Javascript<span class="sub-arrow"><i class="fas fa-caret-down"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-163485166515032-4" role="group" aria-hidden="true" aria-labelledby="sm-163485166515032-3" aria-expanded="false">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1747"><a href="https://unitop.com.vn/javascript/jquery/" class="elementor-sub-item">Jquery</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1742"><a href="https://unitop.com.vn/php/" class="elementor-item">Php</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59"><a target="_blank" rel="noopener noreferrer" href="https://unitop.vn/" class="elementor-item">Khóa học</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1750"><a href="https://unitop.com.vn/phpmailer-php.html/#" class="elementor-item elementor-item-anchor has-submenu" id="sm-163485166515032-5" aria-haspopup="true" aria-controls="sm-163485166515032-6" aria-expanded="false">Cộng đồng<span class="sub-arrow"><i class="fas fa-caret-down"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-163485166515032-6" role="group" aria-hidden="true" aria-labelledby="sm-163485166515032-5" aria-expanded="false">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1749"><a target="_blank" rel="noopener noreferrer" href="https://youtube.com/phancuong100" class="elementor-sub-item">Youtube</a></li>
+</ul>
+</li>
+</ul></nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="eicon-menu-bar"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+			<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true" style="top: 38px; width: 750px; left: -149.725px;"><ul id="menu-2-fe5194c" class="elementor-nav-menu" data-smartmenus-id="163485166515241"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-796"><a href="https://unitop.com.vn/tag/tu-van/" class="elementor-item" tabindex="-1">Góc tư vấn</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1512"><a href="https://unitop.com.vn/blog/" class="elementor-item" tabindex="-1">Blog</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1743"><a href="https://unitop.com.vn/html-css/" class="elementor-item has-submenu" tabindex="-1" id="sm-163485166515241-1" aria-haspopup="true" aria-controls="sm-163485166515241-2" aria-expanded="false">Html Css<span class="sub-arrow"><i class="fas fa-caret-down"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-163485166515241-2" role="group" aria-hidden="true" aria-labelledby="sm-163485166515241-1" aria-expanded="false">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1748"><a href="https://unitop.com.vn/html-css/" class="elementor-sub-item" tabindex="-1">Học html css qua ví dụ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1744"><a href="https://unitop.com.vn/html-css/responsive/" class="elementor-sub-item" tabindex="-1">Responsive</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1746"><a href="https://unitop.com.vn/javascript/" class="elementor-item has-submenu" tabindex="-1" id="sm-163485166515241-3" aria-haspopup="true" aria-controls="sm-163485166515241-4" aria-expanded="false">Javascript<span class="sub-arrow"><i class="fas fa-caret-down"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-163485166515241-4" role="group" aria-hidden="true" aria-labelledby="sm-163485166515241-3" aria-expanded="false">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1747"><a href="https://unitop.com.vn/javascript/jquery/" class="elementor-sub-item" tabindex="-1">Jquery</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1742"><a href="https://unitop.com.vn/php/" class="elementor-item" tabindex="-1">Php</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59"><a target="_blank" rel="noopener noreferrer" href="https://unitop.vn/" class="elementor-item" tabindex="-1">Khóa học</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1750"><a href="https://unitop.com.vn/phpmailer-php.html/#" class="elementor-item elementor-item-anchor has-submenu" tabindex="-1" id="sm-163485166515241-5" aria-haspopup="true" aria-controls="sm-163485166515241-6" aria-expanded="false">Cộng đồng<span class="sub-arrow"><i class="fas fa-caret-down"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-163485166515241-6" role="group" aria-hidden="true" aria-labelledby="sm-163485166515241-5" aria-expanded="false">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1749"><a target="_blank" rel="noopener noreferrer" href="https://youtube.com/phancuong100" class="elementor-sub-item" tabindex="-1">Youtube</a></li>
+</ul>
+</li>
+</ul></nav>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section><section class="elementor-section elementor-top-section elementor-element elementor-element-6a4a9063 elementor-section-height-min-height elementor-section-content-space-between elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-sticky elementor-sticky__spacer" data-id="6a4a9063" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}" style="visibility: hidden; transition: none 0s ease 0s; animation: 0s ease 0s 1 normal none running none;">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6013a8c3" data-id="6013a8c3" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-eec2297 elementor-widget elementor-widget-image" data-id="eec2297" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://unitop.com.vn/">
+							<img width="195" height="34" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/logo.png" class="attachment-full size-full" alt="">								</a>
+														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7211cc1a" data-id="7211cc1a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-fe5194c elementor-nav-menu__align-right elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-mobile elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="fe5194c" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+						<nav migration_allowed="1" migrated="0" role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-drop-out"><ul id="menu-1-fe5194c" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-796"><a href="https://unitop.com.vn/tag/tu-van/" class="elementor-item">Góc tư vấn</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1512"><a href="https://unitop.com.vn/blog/" class="elementor-item">Blog</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1743"><a href="https://unitop.com.vn/html-css/" class="elementor-item">Html Css</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1748"><a href="https://unitop.com.vn/html-css/" class="elementor-sub-item">Học html css qua ví dụ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1744"><a href="https://unitop.com.vn/html-css/responsive/" class="elementor-sub-item">Responsive</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1746"><a href="https://unitop.com.vn/javascript/" class="elementor-item">Javascript</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1747"><a href="https://unitop.com.vn/javascript/jquery/" class="elementor-sub-item">Jquery</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1742"><a href="https://unitop.com.vn/php/" class="elementor-item">Php</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59"><a target="_blank" rel="noopener noreferrer" href="https://unitop.vn/" class="elementor-item">Khóa học</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1750"><a href="https://unitop.com.vn/phpmailer-php.html/#" class="elementor-item elementor-item-anchor">Cộng đồng</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1749"><a target="_blank" rel="noopener noreferrer" href="https://youtube.com/phancuong100" class="elementor-sub-item">Youtube</a></li>
+</ul>
+</li>
+</ul></nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="eicon-menu-bar"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+			<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true"><ul id="menu-2-fe5194c" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-796"><a href="https://unitop.com.vn/tag/tu-van/" class="elementor-item" tabindex="-1">Góc tư vấn</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1512"><a href="https://unitop.com.vn/blog/" class="elementor-item" tabindex="-1">Blog</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1743"><a href="https://unitop.com.vn/html-css/" class="elementor-item" tabindex="-1">Html Css</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1748"><a href="https://unitop.com.vn/html-css/" class="elementor-sub-item" tabindex="-1">Học html css qua ví dụ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1744"><a href="https://unitop.com.vn/html-css/responsive/" class="elementor-sub-item" tabindex="-1">Responsive</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1746"><a href="https://unitop.com.vn/javascript/" class="elementor-item" tabindex="-1">Javascript</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1747"><a href="https://unitop.com.vn/javascript/jquery/" class="elementor-sub-item" tabindex="-1">Jquery</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1742"><a href="https://unitop.com.vn/php/" class="elementor-item" tabindex="-1">Php</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59"><a target="_blank" rel="noopener noreferrer" href="https://unitop.vn/" class="elementor-item" tabindex="-1">Khóa học</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1750"><a href="https://unitop.com.vn/phpmailer-php.html/#" class="elementor-item elementor-item-anchor" tabindex="-1">Cộng đồng</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1749"><a target="_blank" rel="noopener noreferrer" href="https://youtube.com/phancuong100" class="elementor-sub-item" tabindex="-1">Youtube</a></li>
+</ul>
+</li>
+</ul></nav>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				</div>
+		</div>
+				<div data-elementor-type="single-post" data-elementor-id="1482" class="elementor elementor-1482 elementor-location-single post-654 post type-post status-publish format-standard has-post-thumbnail hentry category-php tag-php" data-elementor-settings="[]">
+		<div class="elementor-section-wrap">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-4ecde176 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="4ecde176" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;shape_divider_bottom&quot;:&quot;waves&quot;}">
+							<div class="elementor-background-overlay"></div>
+						<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+	<path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+</svg>		</div>
+					<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3f51b839" data-id="3f51b839" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7edc915 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="7edc915" data-element_type="widget" data-widget_type="theme-post-title.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">PhpMailer: Cách sử dụng hàm gửi email đến người dùng trong Php</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7af163a9 elementor-align-center elementor-widget elementor-widget-post-info" data-id="7af163a9" data-element_type="widget" data-widget_type="post-info.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+					<li class="elementor-icon-list-item elementor-repeater-item-ede85bd elementor-inline-item" itemprop="author">
+						<a href="https://unitop.com.vn/author/phancuong/">
+														<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-author">
+										Phan Văn Cương					</span>
+									</a>
+				</li>
+				<li class="elementor-icon-list-item elementor-repeater-item-ef11192 elementor-inline-item" itemprop="datePublished">
+						<a href="https://unitop.com.vn/2020/03/02/">
+														<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-date">
+										March 2, 2020					</span>
+									</a>
+				</li>
+				</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-5d30be12 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5d30be12" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-41046cea" data-id="41046cea" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-286631fd elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="286631fd" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img width="800" height="450" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/phpmailer-php-unitop-1024x576.png" class="attachment-large size-large" alt="phpmailer-php-unitop" srcset="https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop-1024x576.png 1024w, https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop-300x169.png 300w, https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop-768x432.png 768w, https://unitop.com.vn/wp-content/uploads/2020/03/phpmailer-php-unitop.png 1280w" sizes="(max-width: 800px) 100vw, 800px">														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-8fde32f elementor-widget elementor-widget-spacer" data-id="8fde32f" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-75cbade4 elementor-widget elementor-widget-theme-post-content" data-id="75cbade4" data-element_type="widget" data-widget_type="theme-post-content.default">
+				<div class="elementor-widget-container">
+			
+<p><strong>Php Mailer</strong> là một thư viện giúp chúng ta có thể gửi email đến người dùng trên website một cách dễ dàng, tỉ lệ thành công cao. Nếu bạn đang muốn gửi mail khi người dùng đăng ký tài khoản, kích hoạt tài khoản, xác nhận đơn hàng, liên hệ thì đây là một công cụ rất tuyệt vời, tôi sẽ gửi đến bạn ngay bây giờ. </p>
+
+
+
+<span id="more-654"></span>
+
+
+
+<p>Trên thực tế trong Php có hàm <code>mail()</code> để gửi mail tuy nhiên nó thường bị bị chặn bởi các đơn vị cung cấp server vì email được gửi đi thường vào hòm spam và không mang lại kết quả như mong muốn. </p>
+
+
+
+<p>Chính vì vậy Php Mailer đó là một giải pháp cứu cánh vô cùng hiệu quả, với một số ưu điểm như sau:</p>
+
+
+
+<h2>Tại sao cần gửi email bằng PhpMailer</h2>
+
+
+
+<ul><li>Là thư viện gửi email phổ biến nhất của php</li><li>Tỉ lệ email gửi đi thành công đến được với hòm inbox của người dùng cao, tỉ lệ email vào spam rất ít. </li><li>Email gửi với tốc độ nhanh, sau vài giây là xong</li><li>Nội dung email có thể định dạng hiển thị như mong muốn bằng html</li><li>Có thể gửi đến nhiều người cùng một lúc CC/BCC</li><li>Có thể cấu hình người nhận email phản hồi</li></ul>
+
+
+
+<h2>Checklist sử dụng PhpMailer</h2>
+
+
+
+<p><strong>Bước 1: Download PhpMailer</strong></p>
+
+
+
+<p>Bạn download ngay tại đây:  <a href="https://github.com/PHPMailer/PHPMailer">https://github.com/PHPMailer/PHPMailer</a> </p>
+
+
+
+<p><strong>Bước 2: Khai báo thư viện vào file gửi mail</strong></p>
+
+
+
+<p>Bên dưới là cấu trúc file thư mục chúng ta gửi email</p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">sendmail.</span><span class="enlighter-m3">php</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">PHPMailer</span></div></div><div class=""><div><span class="enlighter-text">---|src</span></div></div><div class=""><div><span class="enlighter-text">-------|Exception.</span><span class="enlighter-m3">php</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">-------|PHPMailer.</span><span class="enlighter-m3">php</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">-------|SMTP.</span><span class="enlighter-m3">php</span></div></div></div><div class="enlighter-raw">sendmail.php
+PHPMailer
+---|src
+-------|Exception.php
+-------|PHPMailer.php
+-------|SMTP.php</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">sendmail.php
+PHPMailer
+---|src
+-------|Exception.php
+-------|PHPMailer.php
+-------|SMTP.php</pre>
+
+
+
+<p><strong>Trong đó: </strong></p>
+
+
+
+<ul><li>sendmail.php là file dùng để gọi hàm gửi mail</li><li>PhpMailer là thư viện sau khi đã download ở bước trên</li></ul>
+
+
+
+<p>Để có thể sử dụng được thư viện này chúng ta cần require <code>Php Mailer</code> vào file gửi mail <code>sendmail.php</code>.</p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-g1">&lt;</span><span class="enlighter-text">?php</span></div></div><div class=""><div><span class="enlighter-text">use PHPMailer\PHPMailer\PHPMailer;</span></div></div><div class=""><div><span class="enlighter-text">use PHPMailer\PHPMailer\Exception;</span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">require </span><span class="enlighter-s0">'PHPMailer/src/Exception.php'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">require </span><span class="enlighter-s0">'PHPMailer/src/PHPMailer.php'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">require </span><span class="enlighter-s0">'PHPMailer/src/SMTP.php'</span><span class="enlighter-text">;</span></div></div></div><div class="enlighter-raw">&lt;?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">&lt;?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';</pre>
+
+
+
+<p>Quan trọng: Bạn cần chú ý ở đường dẫn file được require bên trên, nó phải chính xác thì mới chạy ok. </p>
+
+
+
+<p><strong>Bước 4: Cấu hình gửi email bằng PhpMailer</strong></p>
+
+
+
+<p>Khai báo server gửi mail, thông thường chúng ta gửi mail  qua tài khoản gmail chính vì vậy bạn cần khai báo như sau. </p>
+
+
+
+<p><strong>Host</strong></p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Host = </span><span class="enlighter-s0">'smtp.gmail.com'</span><span class="enlighter-text">;  </span></div></div></div><div class="enlighter-raw">$mail-&gt;Host = 'smtp.gmail.com';  </div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">$mail-&gt;Host = 'smtp.gmail.com';  </pre>
+
+
+
+<p><strong>Port</strong></p>
+
+
+
+<p>Port bạn khai báo <code>465 </code>hoặc <code>587</code></p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Port = </span><span class="enlighter-n1">587</span><span class="enlighter-text">;  </span></div></div></div><div class="enlighter-raw">$mail-&gt;Port = 587;  </div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">$mail-&gt;Port = 587;  </pre>
+
+
+
+<p>Tiếp tục là thông tin tài khoản email người gửi. Bạn có thể tạo ra một tài khoản gmail mới chuyên dùng để gửi mail hệ thống sau đó khai báo cấu hình như bên dưới</p>
+
+
+
+<p><strong>Tài khoản email người gửi</strong></p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text"> $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Username = </span><span class="enlighter-s0">'user@example.com'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text"> $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Password = </span><span class="enlighter-s0">'secret'</span><span class="enlighter-text">;    </span></div></div></div><div class="enlighter-raw"> $mail-&gt;Username = 'user@example.com';
+ $mail-&gt;Password = 'secret';    </div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group=""> $mail-&gt;Username = 'user@example.com';
+ $mail-&gt;Password = 'secret';    </pre>
+
+
+
+<p>Giả sử tôi sử dụng email <code>phancuong.qt@gmail.com</code>  với mật khẩu <code>unitop!@#</code> thì tôi khai báo như sau:</p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Username = </span><span class="enlighter-s0">'phancuong.qt@gmail.com'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Password = </span><span class="enlighter-s0">'unitop!@#'</span><span class="enlighter-text">;    </span></div></div></div><div class="enlighter-raw">$mail-&gt;Username = 'phancuong.qt@gmail.com';
+$mail-&gt;Password = 'unitop!@#';    </div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">$mail-&gt;Username = 'phancuong.qt@gmail.com';
+$mail-&gt;Password = 'unitop!@#';    </pre>
+
+
+
+<p><strong>Thông tin người nhận email</strong></p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">setFrom</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'from@example.com'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'Mailer'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAddress</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'joe@example.net'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'Joe User'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAddress</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'ellen@example.com'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addReplyTo</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'info@example.com'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'Information'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addCC</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'cc@example.com'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addBCC</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'bcc@example.com'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div></div><div class="enlighter-raw">    $mail-&gt;setFrom('from@example.com', 'Mailer');
+    $mail-&gt;addAddress('joe@example.net', 'Joe User');
+    $mail-&gt;addAddress('ellen@example.com');
+    $mail-&gt;addReplyTo('info@example.com', 'Information');
+    $mail-&gt;addCC('cc@example.com');
+    $mail-&gt;addBCC('bcc@example.com');</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">    $mail-&gt;setFrom('from@example.com', 'Mailer');
+    $mail-&gt;addAddress('joe@example.net', 'Joe User');
+    $mail-&gt;addAddress('ellen@example.com');
+    $mail-&gt;addReplyTo('info@example.com', 'Information');
+    $mail-&gt;addCC('cc@example.com');
+    $mail-&gt;addBCC('bcc@example.com');</pre>
+
+
+
+<p><strong>Trong đó: </strong></p>
+
+
+
+<ul><li><code>setFrom</code>: Hiển thị thông tin người gửi khi người nhập mở email</li><li><code>addAddress</code>: Khai báo email người nhận</li><li><code>addReplyTo</code>: Khai báo email nhận được phản hồi của người nhận, nếu không khai báo nó mặc định gửi lại địa chỉ chúng ta gửi đi.</li><li><code>addCC/addBCC</code>: Gửi kèm cho ai đó</li></ul>
+
+
+
+<p><strong>Đính kèm file khi gửi mail</strong></p>
+
+
+
+<p>Đây là tiện ích khá hay khi bạn muốn đính kèm file trong quá trình gửi mail đến khách hàng. Bạn khai báo đường dẫn file vào đoạn code bên dưới.</p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAttachment</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'/var/tmp/file.tar.gz'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAttachment</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'/tmp/image.jpg'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'new.jpg'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div></div><div class="enlighter-raw">$mail-&gt;addAttachment('/var/tmp/file.tar.gz');
+$mail-&gt;addAttachment('/tmp/image.jpg', 'new.jpg');</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">$mail-&gt;addAttachment('/var/tmp/file.tar.gz');
+$mail-&gt;addAttachment('/tmp/image.jpg', 'new.jpg');</pre>
+
+
+
+<p><strong>Cấu hình nội dung email</strong></p>
+
+
+
+<p>Đây là khai báo giúp chúng ta thiết kế nội dung email đẹp hơn như bôi đậm, thêm màu sắc, tạo các khoảng cách…</p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">isHTML</span><span class="enlighter-g1">(</span><span class="enlighter-k1">true</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Subject = </span><span class="enlighter-s0">'Đây là tiêu đề email'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Body = </span><span class="enlighter-s0">'Đây là nội dung email gửi từ &lt;b&gt;Unitop!&lt;/b&gt;'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">$mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">AltBody = </span><span class="enlighter-s0">'Đây là nội dung khi gửi plain text không sử dụng định dạng html'</span><span class="enlighter-text">;</span></div></div></div><div class="enlighter-raw">$mail-&gt;isHTML(true);
+$mail-&gt;Subject = 'Đây là tiêu đề email';
+$mail-&gt;Body = 'Đây là nội dung email gửi từ &lt;b&gt;Unitop!&lt;/b&gt;';
+$mail-&gt;AltBody = 'Đây là nội dung khi gửi plain text không sử dụng định dạng html';</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">$mail-&gt;isHTML(true);
+$mail-&gt;Subject = 'Đây là tiêu đề email';
+$mail-&gt;Body = 'Đây là nội dung email gửi từ &lt;b&gt;Unitop!&lt;/b&gt;';
+$mail-&gt;AltBody = 'Đây là nội dung khi gửi plain text không sử dụng định dạng html';</pre>
+
+
+
+<p><strong>Trong đó:</strong></p>
+
+
+
+<ul><li><code>isHTML(true)</code>: Khai báo nội dung email hiển thị định dạng html</li><li><code>Subject </code>: Khai báo chủ để email</li><li><code>Body</code>: Khai báo nội dung thư(định dạng html)</li><li><code>AltBody</code>: Khai báo nội dung thư plain text. (Không dùng phần này bạn comment nó lại)</li></ul>
+
+
+
+<p><strong>Ví dụ đơn giản về gửi mail bằng Php Mailer</strong></p>
+
+
+
+<div class="enlighter-default enlighter-v-standard enlighter-t-wpcustom enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-g1">&lt;</span><span class="enlighter-text">?php</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"></span></div></div><div class=""><div><span class="enlighter-c0">// Import PHPMailer classes into the global namespace</span><span class="enlighter-c0"></span></div></div><div class=""><div><span class="enlighter-c0">// These must be at the top of your script, not inside a function</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">use PHPMailer\PHPMailer\PHPMailer;</span></div></div><div class=""><div><span class="enlighter-text">use PHPMailer\PHPMailer\SMTP;</span></div></div><div class=""><div><span class="enlighter-text">use PHPMailer\PHPMailer\Exception;</span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">require </span><span class="enlighter-s0">'PHPMailer/src/Exception.php'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">require </span><span class="enlighter-s0">'PHPMailer/src/PHPMailer.php'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">require </span><span class="enlighter-s0">'PHPMailer/src/SMTP.php'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"></span></div></div><div class=""><div><span class="enlighter-c0">// Instantiation and passing `true` enables exceptions</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">$mail = </span><span class="enlighter-k1">new</span><span class="enlighter-text"> </span><span class="enlighter-m0">PHPMailer</span><span class="enlighter-g1">(</span><span class="enlighter-k1">true</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-k1">try</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">   </span><span class="enlighter-c0"> //Server settings</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">SMTPDebug = SMTP::DEBUG_SERVER</span><span class="enlighter-c0">;// Enable verbose debug output</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">isSMTP</span><span class="enlighter-g1">()</span><span class="enlighter-c0">;// gửi mail SMTP</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Host = </span><span class="enlighter-s0">'smtp.gmail.com'</span><span class="enlighter-c0">;// Set the SMTP server to send through</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">SMTPAuth = </span><span class="enlighter-k1">true</span><span class="enlighter-c0">;// Enable SMTP authentication</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Username = </span><span class="enlighter-s0">'user@example.com'</span><span class="enlighter-c0">;// SMTP username</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Password = </span><span class="enlighter-s0">'secret'</span><span class="enlighter-text">;</span><span class="enlighter-c0"> // SMTP password</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS</span><span class="enlighter-c0">;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Port = </span><span class="enlighter-n1">587</span><span class="enlighter-text">;</span><span class="enlighter-c0"> // TCP port to connect to</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">   </span><span class="enlighter-c0"> //Recipients</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">setFrom</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'from@example.com'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'Mailer'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAddress</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'joe@example.net'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'Joe User'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span><span class="enlighter-c0"> // Add a recipient</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAddress</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'ellen@example.com'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span><span class="enlighter-c0"> // Name is optional</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addReplyTo</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'info@example.com'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'Information'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addCC</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'cc@example.com'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addBCC</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'bcc@example.com'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">   </span><span class="enlighter-c0"> // Attachments</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAttachment</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'/var/tmp/file.tar.gz'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span><span class="enlighter-c0"> // Add attachments</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">addAttachment</span><span class="enlighter-g1">(</span><span class="enlighter-s0">'/tmp/image.jpg'</span><span class="enlighter-text">, </span><span class="enlighter-s0">'new.jpg'</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span><span class="enlighter-c0"> // Optional name</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">   </span><span class="enlighter-c0"> // Content</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">isHTML</span><span class="enlighter-g1">(</span><span class="enlighter-k1">true</span><span class="enlighter-g1">)</span><span class="enlighter-text">;  </span><span class="enlighter-c0"> // Set email format to HTML</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Subject = </span><span class="enlighter-s0">'Here is the subject'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">Body = </span><span class="enlighter-s0">'This is the HTML message body &lt;b&gt;in bold!&lt;/b&gt;'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text">AltBody = </span><span class="enlighter-s0">'This is the body in plain text for non-HTML mail clients'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    $mail-</span><span class="enlighter-g1">&gt;</span><span class="enlighter-m0">send</span><span class="enlighter-g1">()</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    echo </span><span class="enlighter-s0">'Message has been sent'</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span><span class="enlighter-text"> </span><span class="enlighter-k1">catch</span><span class="enlighter-text"> </span><span class="enlighter-g1">(</span><span class="enlighter-text">Exception $e</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    echo </span><span class="enlighter-s0">"Message could not be sent. Mailer Error: {$mail-&gt;ErrorInfo}"</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">&lt;?php
+
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail-&gt;SMTPDebug = SMTP::DEBUG_SERVER;// Enable verbose debug output
+    $mail-&gt;isSMTP();// gửi mail SMTP
+    $mail-&gt;Host = 'smtp.gmail.com';// Set the SMTP server to send through
+    $mail-&gt;SMTPAuth = true;// Enable SMTP authentication
+    $mail-&gt;Username = 'user@example.com';// SMTP username
+    $mail-&gt;Password = 'secret'; // SMTP password
+    $mail-&gt;SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+    $mail-&gt;Port = 587; // TCP port to connect to
+
+    //Recipients
+    $mail-&gt;setFrom('from@example.com', 'Mailer');
+    $mail-&gt;addAddress('joe@example.net', 'Joe User'); // Add a recipient
+    $mail-&gt;addAddress('ellen@example.com'); // Name is optional
+    $mail-&gt;addReplyTo('info@example.com', 'Information');
+    $mail-&gt;addCC('cc@example.com');
+    $mail-&gt;addBCC('bcc@example.com');
+
+    // Attachments
+    $mail-&gt;addAttachment('/var/tmp/file.tar.gz'); // Add attachments
+    $mail-&gt;addAttachment('/tmp/image.jpg', 'new.jpg'); // Optional name
+
+    // Content
+    $mail-&gt;isHTML(true);   // Set email format to HTML
+    $mail-&gt;Subject = 'Here is the subject';
+    $mail-&gt;Body = 'This is the HTML message body &lt;b&gt;in bold!&lt;/b&gt;';
+    $mail-&gt;AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail-&gt;send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail-&gt;ErrorInfo}";
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">&lt;?php
+
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail-&gt;SMTPDebug = SMTP::DEBUG_SERVER;// Enable verbose debug output
+    $mail-&gt;isSMTP();// gửi mail SMTP
+    $mail-&gt;Host = 'smtp.gmail.com';// Set the SMTP server to send through
+    $mail-&gt;SMTPAuth = true;// Enable SMTP authentication
+    $mail-&gt;Username = 'user@example.com';// SMTP username
+    $mail-&gt;Password = 'secret'; // SMTP password
+    $mail-&gt;SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+    $mail-&gt;Port = 587; // TCP port to connect to
+
+    //Recipients
+    $mail-&gt;setFrom('from@example.com', 'Mailer');
+    $mail-&gt;addAddress('joe@example.net', 'Joe User'); // Add a recipient
+    $mail-&gt;addAddress('ellen@example.com'); // Name is optional
+    $mail-&gt;addReplyTo('info@example.com', 'Information');
+    $mail-&gt;addCC('cc@example.com');
+    $mail-&gt;addBCC('bcc@example.com');
+
+    // Attachments
+    $mail-&gt;addAttachment('/var/tmp/file.tar.gz'); // Add attachments
+    $mail-&gt;addAttachment('/tmp/image.jpg', 'new.jpg'); // Optional name
+
+    // Content
+    $mail-&gt;isHTML(true);   // Set email format to HTML
+    $mail-&gt;Subject = 'Here is the subject';
+    $mail-&gt;Body = 'This is the HTML message body &lt;b&gt;in bold!&lt;/b&gt;';
+    $mail-&gt;AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail-&gt;send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail-&gt;ErrorInfo}";
+}</pre>
+
+
+
+<p>Bây giờ bạn copy nội dung trên và thay đổi các cấu hình thích hợp với nhu cầu của bạn và chạy test chương trình. </p>
+
+
+
+<p><strong>Lưu ý</strong>: Tài khoản email người gửi cần bỏ bảo mật 2 lớp và khởi động chế độ gửi email ở ứng dụng kém an toàn. </p>
+
+
+
+<p>Bạn truy cầu vào đây để điều chỉnh:  <a href="https://myaccount.google.com/security">https://myaccount.google.com/security</a> </p>
+
+
+
+<p><strong>Tổng kết</strong></p>
+
+
+
+<p>Trên đây tôi đã hướng dẫn bạn cách để gửi email với PhpMailer. Tuy nó khá dài nhưng bạn hãy làm theo từng bước một để tận hưởng thành quả. </p>
+
+
+
+<p>Xin chào, sớm hẹn gặp lại!</p>
+
+
+
+<p></p>
+		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-7c13d274 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="7c13d274" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-34a6d054" data-id="34a6d054" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-414d1aab elementor-widget elementor-widget-heading" data-id="414d1aab" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Làm thế nào để học lập trình web đi làm hiệu quả thu nhập từ 8-30tr/tháng?</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-74d04d09 elementor-widget elementor-widget-heading" data-id="74d04d09" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Tôi thường xuyên gửi những thông tin như thế này cho bạn qua email. Hơn 5000+ người đang nhận thông tin! (Không SPAM)
+</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-648a4c24 elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="648a4c24" data-element_type="widget" data-settings="{&quot;button_width&quot;:&quot;25&quot;,&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
+				<div class="elementor-widget-container">
+					<form class="elementor-form" method="post" name="New Form">
+			<input type="hidden" name="post_id" value="1482">
+			<input type="hidden" name="form_id" value="648a4c24">
+			<input type="hidden" name="referer_title" value="PhpMailer: Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn">
+
+							<input type="hidden" name="queried_id" value="654">
+			
+			<div class="elementor-form-fields-wrapper elementor-labels-">
+								<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_b1d59fd elementor-col-100">
+					<label for="form-field-field_b1d59fd" class="elementor-field-label elementor-screen-only">Tên</label><input size="1" type="text" name="form_fields[field_b1d59fd]" id="form-field-field_b1d59fd" class="elementor-field elementor-size-md  elementor-field-textual" placeholder="Tên của bạn?">				</div>
+								<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-75 elementor-field-required">
+					<label for="form-field-email" class="elementor-field-label elementor-screen-only">Email</label><input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-md  elementor-field-textual" placeholder="Email của bạn?" required="required" aria-required="true">				</div>
+								<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-25 e-form__buttons">
+					<button type="submit" class="elementor-button elementor-size-md">
+						<span>
+															<span class="elementor-align-icon-right elementor-button-icon">
+									<i aria-hidden="true" class="fas fa-arrow-right"></i>																	</span>
+																						<span class="elementor-button-text">Gửi cho tôi</span>
+													</span>
+					</button>
+				</div>
+			</div>
+		</form>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<div class="elementor-element elementor-element-24daaa76 elementor-post-navigation-borders-yes elementor-widget elementor-widget-post-navigation" data-id="24daaa76" data-element_type="widget" data-widget_type="post-navigation.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-post-navigation">
+			<div class="elementor-post-navigation__prev elementor-post-navigation__link">
+				<a href="https://unitop.com.vn/visual-studio-code.html/" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><i class="fa fa-arrow-left" aria-hidden="true"></i><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Trước</span><span class="post-navigation__prev--title">Phần mềm Visual Studio Code: Hướng dẫn cài đặt và cách sử dụng cho học lập trình web</span></span></a>			</div>
+							<div class="elementor-post-navigation__separator-wrapper">
+					<div class="elementor-post-navigation__separator"></div>
+				</div>
+						<div class="elementor-post-navigation__next elementor-post-navigation__link">
+				<a href="https://unitop.com.vn/layout-web.html/" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Sau</span><span class="post-navigation__next--title">Tạo layout website 2 cột nhanh chóng với Flexbox Css</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><i class="fa fa-arrow-right" aria-hidden="true"></i><span class="elementor-screen-only">Next</span></span></a>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5643efc6 elementor-widget elementor-widget-heading" data-id="5643efc6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Mọi người thường xem</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4acef1f2 elementor-grid-2 elementor-posts--align-center elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-card-shadow-yes elementor-posts__hover-gradient elementor-widget elementor-widget-posts" data-id="4acef1f2" data-element_type="widget" data-settings="{&quot;cards_columns&quot;:&quot;2&quot;,&quot;cards_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;30&quot;,&quot;sizes&quot;:[]},&quot;cards_columns_tablet&quot;:&quot;2&quot;,&quot;cards_columns_mobile&quot;:&quot;1&quot;}" data-widget_type="posts.cards">
+				<div class="elementor-widget-container">
+					<div class="elementor-posts-container elementor-posts elementor-posts--skin-cards elementor-grid elementor-has-item-ratio">
+				<article class="elementor-post elementor-grid-item post-1448 post type-post status-publish format-standard has-post-thumbnail hentry category-html-css tag-html-css tag-jquery">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://unitop.com.vn/tao-form-dang-nhap-voi-html-css-sieu-dep.html/">
+			<div class="elementor-post__thumbnail"><img width="300" height="169" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/form-login-300x169.png" class="attachment-medium size-medium" alt="" srcset="https://unitop.com.vn/wp-content/uploads/2021/09/form-login-300x169.png 300w, https://unitop.com.vn/wp-content/uploads/2021/09/form-login-1024x576.png 1024w, https://unitop.com.vn/wp-content/uploads/2021/09/form-login-768x432.png 768w, https://unitop.com.vn/wp-content/uploads/2021/09/form-login.png 1280w" sizes="(max-width: 300px) 100vw, 300px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://unitop.com.vn/tao-form-dang-nhap-voi-html-css-sieu-dep.html/">
+				Tạo form đăng nhập với html css siêu đẹp			</a>
+		</h3>
+				<div class="elementor-post__excerpt">
+			<p>Nếu bạn muốn đi làm với nghề lập trình web chắn chắn sẽ tới một lúc bạn cần tạo ra form đăng nhập đăng ký</p>
+		</div>
+				</div>
+				<div class="elementor-post__meta-data">
+					<span class="elementor-post-author">
+			Phan Văn Cương		</span>
+				<span class="elementor-post-date">
+			11/09/2021		</span>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-1436 post type-post status-publish format-standard has-post-thumbnail hentry category-html-css tag-html-css">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://unitop.com.vn/doi-mau-border-css.html/">
+			<div class="elementor-post__thumbnail"><img width="300" height="169" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/hover-border-300x169.png" class="attachment-medium size-medium" alt="" srcset="https://unitop.com.vn/wp-content/uploads/2021/08/hover-border-300x169.png 300w, https://unitop.com.vn/wp-content/uploads/2021/08/hover-border-1024x576.png 1024w, https://unitop.com.vn/wp-content/uploads/2021/08/hover-border-768x432.png 768w, https://unitop.com.vn/wp-content/uploads/2021/08/hover-border.png 1280w" sizes="(max-width: 300px) 100vw, 300px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://unitop.com.vn/doi-mau-border-css.html/">
+				Đổi màu border khi hover vào bài viết, sản phẩm bằng css			</a>
+		</h3>
+				<div class="elementor-post__excerpt">
+			<p>Làm thế nào để đổi màu border của bài viết, sản phẩm… khi chúng ta hover chuột vào nó? Nếu bạn đang học lập trình</p>
+		</div>
+				</div>
+				<div class="elementor-post__meta-data">
+					<span class="elementor-post-author">
+			Phan Văn Cương		</span>
+				<span class="elementor-post-date">
+			30/08/2021		</span>
+				</div>
+					</div>
+		</article>
+				</div>
+
+
+		
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-4a9f72ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4a9f72ef" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;shape_divider_top&quot;:&quot;waves&quot;}">
+							<div class="elementor-background-overlay"></div>
+						<div class="elementor-shape elementor-shape-top" data-negative="false">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+	<path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+</svg>		</div>
+					<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-744e95c8" data-id="744e95c8" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6f2861b8 elementor-widget elementor-widget-heading" data-id="6f2861b8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h4 class="elementor-heading-title elementor-size-default">Bạn muốn kiếm tiền từ kỹ năng lập trình web?</h4>		</div>
+				</div>
+				<div class="elementor-element elementor-element-349b569d elementor-widget elementor-widget-heading" data-id="349b569d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Lộ trình 10 bước có nhóm kín kèm cặp và trên 2.500 người học và đã đi làm với thu nhập 8-30tr/tháng</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-14c93e43 elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="14c93e43" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://unitop.vn/" target="_blank" class="elementor-button-link elementor-button elementor-size-md" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon elementor-align-icon-right">
+				<i aria-hidden="true" class="fas fa-arrow-right"></i>			</span>
+						<span class="elementor-button-text">Bắt đầu ngay</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-24800dd4" data-id="24800dd4" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4d07ca7 elementor-widget elementor-widget-image elementor-motion-effects-parent" data-id="4d07ca7" data-element_type="widget" data-settings="{&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;motion_fx_translateY_direction&quot;:&quot;negative&quot;,&quot;motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;1&quot;,&quot;sizes&quot;:[]},&quot;motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;],&quot;motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:&quot;0&quot;,&quot;end&quot;:&quot;50&quot;}}}" data-widget_type="image.default">
+				<div class="elementor-widget-container elementor-motion-effects-element" style="--translateY:-50px; transform: translateY(var(--translateY));">
+								<div class="elementor-image">
+												<img width="539" height="539" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/CTA-post.png" class="attachment-full size-full" alt="" srcset="https://unitop.com.vn/wp-content/uploads/2021/10/CTA-post.png 539w, https://unitop.com.vn/wp-content/uploads/2021/10/CTA-post-300x300.png 300w, https://unitop.com.vn/wp-content/uploads/2021/10/CTA-post-150x150.png 150w" sizes="(max-width: 539px) 100vw, 539px">														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				</div>
+		</div>
+				<div data-elementor-type="footer" data-elementor-id="1498" class="elementor elementor-1498 elementor-location-footer" data-elementor-settings="[]">
+		<div class="elementor-section-wrap">
+					<footer class="elementor-section elementor-top-section elementor-element elementor-element-292ab11b elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="292ab11b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-44980376" data-id="44980376" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-479c0e2f elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="479c0e2f" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-503d78a3" data-id="503d78a3" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-701ce8c8 elementor-widget elementor-widget-heading" data-id="701ce8c8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<p class="elementor-heading-title elementor-size-default">© 2021  All rights Reserved. Design by Unitop.com.vn</p>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2a0ca5d5" data-id="2a0ca5d5" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-500cd193 e-grid-align-right e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="500cd193" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper elementor-grid">
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-993ef04" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+													<i class="fa fa-facebook"></i>
+											</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-a229ff5" target="_blank">
+						<span class="elementor-screen-only">Twitter</span>
+													<i class="fa fa-twitter"></i>
+											</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-google-plus elementor-repeater-item-a1c64d4" target="_blank">
+						<span class="elementor-screen-only">Google-plus</span>
+													<i class="fa fa-google-plus"></i>
+											</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-pinterest elementor-repeater-item-f4f16ac" target="_blank">
+						<span class="elementor-screen-only">Pinterest</span>
+													<i class="fa fa-pinterest"></i>
+											</a>
+				</span>
+					</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</footer>
+				</div>
+		</div>
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJHB9F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><link rel="stylesheet" id="elementor-icons-fa-regular-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/regular.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="e-animations-css" href="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/animations.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/enlighterjs.min.js.tải xuống"></script>
+<script type="text/javascript">
+!function(e,n){if("undefined"!=typeof EnlighterJS){var o={"selectors":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"options":{"indent":2,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":false,"textOverflow":"break","linenumbers":true,"theme":"wpcustom","language":"php","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""}};(e.EnlighterJSINIT=function(){EnlighterJS.init(o.selectors.block,o.selectors.inline,o.options)})()}else{(n&&(n.error||n.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}}(window,console);
+</script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/wp-embed.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/jquery.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/jquery-migrate.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/jquery.smartmenus.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/imagesloaded.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/webpack-pro.runtime.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/webpack.runtime.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/frontend-modules.min.js.tải xuống"></script>
+<script type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/unitop.com.vn\/wp-admin\/admin-ajax.php","nonce":"366c423f71","urls":{"assets":"https:\/\/unitop.com.vn\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/unitop.com.vn\/wp-json\/"},"i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/unitop.com.vn\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/frontend.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/waypoints.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/position.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/swiper.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/share-link.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/dialog.min.js.tải xuống"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.4.4","is_static":false,"experimentalFeatures":{"e_import_export":true,"landing-pages":true,"elements-color-picker":true,"admin-top-bar":true,"form-submissions":true},"urls":{"assets":"https:\/\/unitop.com.vn\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":654,"title":"PhpMailer%3A%20C%C3%A1ch%20s%E1%BB%AD%20d%E1%BB%A5ng%20h%C3%A0m%20g%E1%BB%ADi%20email%20%C4%91%E1%BA%BFn%20ng%C6%B0%E1%BB%9Di%20d%C3%B9ng%20trong%20Php%20-%20Unitop.com.vn","excerpt":"","featuredImage":"https:\/\/unitop.com.vn\/wp-content\/uploads\/2020\/03\/phpmailer-php-unitop-1024x576.png"}};
+</script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/frontend.min.js(1).tải xuống"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/preloaded-elements-handlers.min.js.tải xuống"></script><svg style="display: none;" class="e-font-icon-svg-symbols"></svg>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/preloaded-modules.min.js.tải xuống"></script>
+<script type="text/javascript" src="./PhpMailer_ Cách sử dụng hàm gửi email đến người dùng trong Php - Unitop.com.vn_files/jquery.sticky.min.js.tải xuống"></script>
+
+
+
+
+<!-- Dynamic page generated in 0.656 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2021-10-16 16:51:38 -->
+
+<!-- super cache --></body></html>

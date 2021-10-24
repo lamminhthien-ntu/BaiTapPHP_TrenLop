@@ -73,7 +73,7 @@ if (isset($_POST['HOTEN']))
     }
 }
 
-if ($_FILES["ANH"]) {
+if (isset($_FILES["ANH"])) {
     echo "<br>Định dạng ảnh là  $imageFileType<br>";
     echo "<br>Dung lượng ảnh là <br>";
     echo $_FILES["ANH"]["size"]."<br>";
@@ -137,7 +137,7 @@ if (isset($_POST['HOTEN'])) {
             </td>
         </tr>
         <tr>
-            <td>Mã loại nhân viên</td>
+            <td>loại nhân viên</td>
             <td>
 <!--                <input type="text" name="MALOAINHANVIEN" />-->
 
