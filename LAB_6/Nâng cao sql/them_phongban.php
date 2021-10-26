@@ -32,7 +32,7 @@ if (isset($_POST['TENPHONG'])) {
 ?>
 
 <form method="post" action="logout.php">
-    <input type="submit" value="Đăng xuất" >
+    <input type="submit" value="Đăng Xuất" >
 </form>
 
 

@@ -50,7 +50,7 @@ if (isset($_POST['but_submit'])) {
                     </div>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="login.php">
+                    <form method="post" action="index.php">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>

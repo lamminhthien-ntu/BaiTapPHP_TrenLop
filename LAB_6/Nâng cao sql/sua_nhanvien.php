@@ -100,7 +100,7 @@ if (isset($_POST['HOTEN'])) {
 ?>
 
 <form method="post" action="logout.php">
-    <input type="submit" value="Đăng xuất">
+    <input type="submit" value="Đăng Xuất">
 </form>
 
 

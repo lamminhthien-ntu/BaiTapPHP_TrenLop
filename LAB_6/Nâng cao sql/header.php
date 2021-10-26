@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap.min.css">
-	<script src="vendor/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap.min.css">
+    <script src="vendor/bootstrap.min.js"></script>
 </head>
 <style>
     .center {
@@ -15,7 +15,6 @@
     * {
         text-align: center;
         color: red;
-        text-shadow:5px 5px 10px #00FF00;
         border-radius: 10px;
         /*background-color: seashell;*/
         margin-left: auto;
@@ -47,7 +46,7 @@
         box-shadow: 0 1px 3px rgba(0,0,0,0.2)
         display: table
         @media screen and (max-width: 580px)
-        display: block
+    display: block
     }
 
     td {
@@ -166,12 +165,12 @@
 
 </style>
 <body>
-	<div class="center text-center">
-		<h3 class="pancakes-text">QUẢN LÝ NHÂN VIÊN</h3>
-		<button type="button" class="btn-lg btn-outline-primary "><a href="index_nhanvien.php">nhân viên</a></button>
-		<button type="button" class="btn-lg btn-outline-success "><a href="index_loainv.php">loại nhân viên</a></button>
-		<button type="button" class="btn-lg  btn-outline-danger "><a href="index_phongban.php">phòng ban</a></button>
+<div class="center text-center">
+    <h3 class="pancakes-text">QUẢN LÝ NHÂN VIÊN</h3>
+    <button type="button" class="btn-lg btn-outline-primary "><a href="index_nhanvien.php">Nhân Viên</a></button>
+    <button type="button" class="btn-lg btn-outline-success "><a href="index_loainv.php">Loại Nhân Viên</a></button>
+    <button type="button" class="btn-lg  btn-outline-danger "><a href="index_phongban.php">Phòng Ban</a></button>
 
-	</div>
+</div>
 </body>
 </html>

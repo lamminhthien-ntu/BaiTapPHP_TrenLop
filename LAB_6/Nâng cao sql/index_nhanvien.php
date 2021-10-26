@@ -40,7 +40,8 @@
     ?>
     <form method="post" action="logout.php">
         <input   value="<?php echo $uname;?>" disabled>
-        <input type="submit" value="Đăng xuất" >
+        <input type="submit" value="Đăng xuất">
+
     </form>
 
 
@@ -49,9 +50,10 @@
 			<h2 class="text-center" style="color: blue;">Danh sách nhân viên</h2>
 			<p class="text-center" style="color: lightcoral;"><?php echo "Trang".$page;?></p>
             <button type="button" class="btn btn-default btn-lg"><a href="them_nhanvien.php">Thêm nhân viên</a></button>
+            <button type="button" class="btn btn-default btn-lg"><a href="timkiem_nv.php">Tra cứu nhân viên nâng cao</a></button>
             <form action="index_nhanvien.php" method="get">
                 <input name="keyword" placeholder="" value="">
-                <input type="submit" value="Tìm nhân viên">
+                <input type="submit" style="background-color: #ffeaed" value="Tìm nhân viên">
             </form>
 			<table class="table">
 				<thead>
@@ -92,7 +94,7 @@
                         if (!empty($_GET['keyword']))
                         {
                             $search = $_GET['keyword'];
-                            $row_sql = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG and HOTEN like '%$search%' LIMIT ".$this_page_first_result.','.$results_per_page;
+                            $row_sql = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = loainv.MALOAINV and nhanvien.MAPHONG = phongban.MAPHONG and HOTEN like '%$search%'or loainv.TENLOAINV like '%$search%' or phongban.TENPHONG like '%$search' or DIACHI like '%$search'  LIMIT ".$this_page_first_result.','.$results_per_page;
                         }
                         $row_thuchien=mysqli_query($conn,$row_sql);
 
