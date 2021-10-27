@@ -9,9 +9,10 @@ if (isset($_GET['btn-submit'])) {
     if (isset($_GET['DIACHI'])) $DIACHI = $_GET['DIACHI']; else $DIACHI = '';
     if (isset($_GET['MALOAINV'])) $MALOAINV = $_GET['MALOAINV']; else $MALOAINV = '';
     if (isset($_GET['MAPHONG'])) $MAPHONG = $_GET['MAPHONG']; else $MAPHONG = '';
-    $sql = "SELECT * FROM nhanvien WHERE  MANV LIKE '%$MANV%' OR HOTEN LIKE '%$HOTEN%' OR GIOITINH LIKE '%$GIOITINH%' OR DIACHI LIKE '%$DIACHI%' OR MALOAINV LIKE '%$MALOAINV%' OR MAPHONG LIKE '%$MAPHONG%'";
+//    $sql = "SELECT * FROM nhanvien WHERE  MANV LIKE '%$MANV%' OR HOTEN LIKE '%$HOTEN%' OR GIOITINH LIKE '%$GIOITINH%' OR DIACHI LIKE '%$DIACHI%' OR MALOAINV LIKE '%$MALOAINV%' OR MAPHONG LIKE '%$MAPHONG%'";
+    echo "<p class='non-form center' style='background: #c0ecff; color:#ff020c '>Đã tìm kiếm thành công, mời bạn cuộn trang xuống để xem danh sách đã tra cứu</p>";
 }
-//    echo  $sql;
+
 ?>
 
 
@@ -60,14 +61,7 @@ if (isset($_GET['btn-submit'])) {
 </form>
 <div class="container">
     <div class="row">
-        <h2 class="text-center" style="color: blue;">Danh sách nhân viên</h2>
-        <button type="button" class="btn btn-default btn-lg"><a href="them_nhanvien.php">Thêm nhân viên</a></button>
-        <button type="button" class="btn btn-default btn-lg"><a href="timkiem_nv.php">Tra cứu nhân viên nâng cao</a>
         </button>
-        <form action="index_nhanvien.php" method="get">
-            <input name="keyword" placeholder="" value="">
-            <input type="submit" style="background-color: #ffeaed" value="Tìm nhân viên">
-        </form>
         <table class="table">
             <thead>
             <tr>

@@ -25,7 +25,7 @@
     disabled {
         background-color: gainsboro;
     }
-    form {
+    form, non-form {
         margin: auto;
         width: 50%;
         border: 3px solid green;
