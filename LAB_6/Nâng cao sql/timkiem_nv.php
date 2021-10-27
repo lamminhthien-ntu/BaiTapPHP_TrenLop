@@ -72,8 +72,8 @@ if (isset($_GET['btn-submit'])) {
                 <th>Giới tính</th>
                 <th>Địa chỉ</th>
                 <th>Ảnh</th>
-                <th>loại nhân viên</th>
-                <th>phòng</th>
+                <th>Mã loại nhân viên</th>
+                <th>Mã phòng</th>
             </tr>
             </thead>
             <tbody>
@@ -88,9 +88,10 @@ if (isset($_GET['btn-submit'])) {
                 $row_thuchien = mysqli_query($conn, $row_sql);
                 $row_thuchien_phongban = mysqli_query($conn,$row_sql_loainhanvien);
                 $row_thuchien_loainhanvien = mysqli_query($conn,$row_sql_phongban);
-
-
-                echo var_dump($row_sql);
+//                var_dump(mysqli_fetch_array($row_thuchien_phongban)['TENLOAINV']);
+//
+//
+//                echo var_dump($row_sql);
                 while ($dulieu = mysqli_fetch_array($row_thuchien)){
                 ?>
                 <td><?php echo $dulieu['MANV']; ?></td>
