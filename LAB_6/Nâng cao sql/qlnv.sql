@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2021 at 04:05 AM
+-- Generation Time: Oct 27, 2021 at 08:05 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -44,12 +44,7 @@ INSERT INTO `loainv` (`MALOAINV`, `TENLOAINV`) VALUES
 (3, 'Kĩ Thuật'),
 (4, 'Chăm sóc khách hàng'),
 (5, 'Trưởng phòng'),
-(6, 'Marketting'),
-(7, 'Ngoại Giao'),
-(8, 'Ngoại Giao'),
-(9, 'abc'),
-(10, 'abc'),
-(11, 'rtf');
+(6, 'Marketting');
 
 -- --------------------------------------------------------
 
@@ -73,34 +68,13 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`MANV`, `HOTEN`, `NGAYSINH`, `GIOITINH`, `DIACHI`, `ANH`, `MALOAINV`, `MAPHONG`) VALUES
-(1, 'Lâm Minh Thiện', '2000-01-02', b'0', 'Tổ dân phố 18, P. Ninh Hiệp, TX Ninh Hoà, Tỉnh Khánh Hoà', '', 2, 2),
-(2, 'Nhật Trường', '2000-09-29', b'0', 'Thống Nhất, Kinh Dinh, Phan Rang-Tháp Chàm, Ninh Thuận, Việt Nam', '', 3, 3),
-(3, 'Quốc Thịnh', '2021-07-07', b'0', 'Sơn Hoà, Phú Yên, Việt Nam', '', 5, 3),
-(4, 'Duy Luân', '2000-11-03', b'0', 'số 22 Đường 23/10, Phương sơn, Thành phố Nha Trang, Khánh Hòa 650000, Việt Nam', '', 2, 2),
-(5, 'Văn Duy', '2000-01-01', b'0', 'QGMJ+VJ3, Lạc Lâm, Đơn Dương, Lâm Đồng, Việt Nam', '', 3, 3),
-(6, 'Hồ Hiểu Lực', '2000-12-02', b'0', 'Địa chỉ tạm thời', '1', 4, 3),
-(10, 'tHIỆN', '2000-01-02', b'1', '	\nTổ dân phố 18, P. Ninh Hiệp, TX Ninh Hoà, Tỉnh Khá.', '2', 2, 2),
-(12, 'tHIỆN', '2000-01-02', b'1', ' Tổ dân phố 18, P. Ninh Hiệp, TX Ninh Hoà, Tỉnh Khá.', '2', 2, 2),
-(20, 'LAMMINHTHIEN', '0000-00-00', b'1', 'da', '1', 2, 2),
-(21, 'ABC', '2000-01-02', b'0', 'DSAD', 'SAG', 5, 3),
-(22, '2', '2000-05-20', b'1', 'da', '1', 2, 2),
-(23, '2', '2000-05-20', b'1', 'da', '1', 2, 2),
-(24, '2', '2000-05-20', b'1', 'da', '1', 2, 2),
-(25, '2', '2000-05-20', b'1', 'da', '1', 2, 2),
-(26, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(27, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(28, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(29, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(30, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(31, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(32, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(33, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(34, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(35, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(36, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(37, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(38, '2', '2000-05-20', b'1', '124', '1', 2, 2),
-(39, '2', '2000-05-20', b'1', '124', '1', 2, 2);
+(2, 'Nhật Trường 2', '2000-09-06', b'1', 'Thống Nhất, Kinh Dinh, Phan Rang-Tháp Chàm, Ninh Thuận, Việt Nam A', '2.png', 2, 4),
+(3, 'Quốc Thịnh', '2021-07-07', b'1', 'Sơn Hoà, Phú Yên, Việt Nam', '2.png', 2, 4),
+(5, 'Văn Duy', '2000-01-01', b'0', 'QGMJ+VJ3, Lạc Lâm, Đơn Dương, Lâm Đồng, Việt Nam', '3.png', 3, 3),
+(6, 'Hồ Hiểu Lực', '2000-12-02', b'1', 'Địa chỉ tạm thời', '4.png', 2, 3),
+(49, 'Hồ Hiểu Lực', '2000-05-20', b'1', 'A,B,C', '5.jpeg', 2, 3),
+(50, 'Ngô Nam', '0000-00-00', b'1', 'A,B,C', '6.jpg', 2, 1),
+(52, 'Maria', '2000-05-20', b'1', '〒170-0013 東京都豊島区東池袋３丁目１１−11', '6.jpg', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -181,7 +155,7 @@ ALTER TABLE `loainv`
 -- AUTO_INCREMENT for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `MANV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `MANV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `phongban`
