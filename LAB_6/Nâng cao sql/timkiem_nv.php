@@ -88,8 +88,14 @@ if (isset($_GET['btn-submit'])) {
                 if (isset($_GET['btn-submit']))
                 {
 
-                $row_sql = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,DIACHI,ANH,loainv.TENLOAINV,phongban.TENPHONG from nhanvien JOIN loainv JOIN phongban WHERE nhanvien.MALOAINV = $MALOAINV and nhanvien.MAPHONG = $MAPHONG and  MANV LIKE '%$MANV%' OR HOTEN LIKE '%$HOTEN%' OR GIOITINH LIKE '%$GIOITINH%' OR DIACHI LIKE '%$DIACHI%' ";
+                $row_sql = "SELECT * FROM nhanvien WHERE  MANV LIKE '%$MANV%' OR HOTEN LIKE '%$HOTEN%' OR GIOITINH LIKE '%$GIOITINH%' OR DIACHI LIKE '%$DIACHI%' OR MALOAINV LIKE '%$MALOAINV%' OR MAPHONG LIKE '%$MAPHONG%'";
+                $row_sql_phongban ="SELECT * FROM phongban WHERE MAPHONG = $MAPHONG";
+                $row_sql_loainhanvien = "SELECT * FROM loainv WHERE MALOAINV= $MALOAINV ";
                 $row_thuchien = mysqli_query($conn, $row_sql);
+                $row_thuchien_phongban = mysqli_query($conn,$row_sql_loainhanvien);
+                $row_thuchien_loainhanvien = mysqli_query($conn,$row_sql_phongban);
+
+
                 echo var_dump($row_sql);
                 while ($dulieu = mysqli_fetch_array($row_thuchien)){
                 ?>
@@ -99,8 +105,8 @@ if (isset($_GET['btn-submit'])) {
                 <td><?php echo $dulieu['GIOITINH']; ?></td>
                 <td><?php echo $dulieu['DIACHI']; ?></td>
                 <td><img src="<?php echo 'uploads/' . $dulieu['ANH']; ?>" alt="Avatar" class="avatar"></td>
-                <td><?php echo $dulieu['TENLOAINV']; ?></td>
-                <td><?php echo $dulieu['TENPHONG']; ?></td>
+                <td><?php echo $dulieu['MALOAINV']; ?></td>
+                <td><?php echo $dulieu['MAPHONG']; ?></td>
                 <td>
                     <a onclick=" return confirm('bạn có chắc muốn sửa không')"
                        href="sua_nhanvien.php?id=<?php echo $dulieu['MANV'] ?>" title="sửa"><img src="icon/edit.png"
@@ -117,29 +123,6 @@ if (isset($_GET['btn-submit'])) {
             <?php } ?>
             </tbody>
         </table>
-        <?php
-        // Hiển thị liên kết đến các trang
-
-        if ($page != 1)
-            echo '<a href="index_nhanvien.php?page=' . (1) . '" style="padding-right: 3px;padding-left: 3px;">' . '<<' . '</a>';
-
-
-        //Kiểm tra xem, nếu trang hiện tại không phải là trang 1 thì có nút "Trước" để lùi về trang trước
-        if ($page != 1) echo '<a href="index_nhanvien.php?page=' . ($page - 1) . '" style="padding-right: 3px;padding-left: 3px;">' . '<--' . '</a>';
-
-        for ($page_a = 1; $page_a <= $number_of_pages; $page_a++) {
-            if ($page_a == $page)
-                echo '<b><a href="index_nhanvien.php?page=' . $page_a . '"  style="border-style: dashed;padding-right: 3px;padding-left: 3px;">' . $page_a . '</a></b> ';
-            else
-                echo '<a href="index_nhanvien.php?page=' . $page_a . '" style="padding-right: 3px;padding-left: 3px;">' . $page_a . '</a>';
-        }
-
-        //Kiểm tra xem, nếu trang hiện tại không phải là trang cuối thì có nút "Sau" để tiến tới trang sau
-        if ($page != $number_of_pages) echo '<a href="index_nhanvien.php?page=' . ($page + 1) . '" style="padding-right: 3px;padding-left: 3px;">' . '-->' . '</a>';
-
-        if ($page != $number_of_pages)
-            echo '<a href="index_nhanvien.php?page=' . ($number_of_pages) . '" style="padding-right: 3px;padding-left: 3px;">' . 'Cuối cùng' . '</a>';
-        ?>
         <?php } ?>
     </div>
 </div>

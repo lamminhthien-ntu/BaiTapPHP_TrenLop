@@ -1,8 +1,10 @@
 <!--Connect MySQL Database -->
 <?php include('connect.php') ?>
 <!--Bootstrap CDN -->
+
 <?php include('bootstrap_cdn.php') ?>
 <!-- Login Processing -->
+
 <?php
 session_start();
 if (isset($_POST['but_submit'])) {
